@@ -3,7 +3,7 @@
 Developer Form Note
 ===
 
-Ongoing additions to _s starter theme for my personal setup. Includes compass setup, flexslider, font awesome and a fe other integrations I typically use for projects.
+Ongoing additions to _s starter theme for my personal setup. Includes compass setup, flexslider, font awesome and a few other integrations I typically use for projects.
 
 This will keep growing!
 
