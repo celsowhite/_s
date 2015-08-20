@@ -167,6 +167,8 @@ function _s_scripts() {
 
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
+/*=== Add google analytics to footer ===*/
+
 /*====================================================================
 
 Enqueue Typekit if Neccesary
@@ -274,27 +276,26 @@ add_action( 'init', 'add_stories_taxonomies', 0 );
 INCLUDES
 ==========================================*/
 
-/**
- * Implement the Custom Header feature.
- */
+/*== Theme Options ==*/
+
+require_once ( get_template_directory() . '/inc/theme-options.php' );
+
+/*== Implement the Custom Header feature. ==*/
+
 require get_template_directory() . '/inc/custom-header.php';
 
-/**
- * Custom template tags for this theme.
- */
+/*== Custom template tags for this theme. ==*/
+
 require get_template_directory() . '/inc/template-tags.php';
 
-/**
- * Custom functions that act independently of the theme templates.
- */
+/*== Custom functions that act independently of the theme templates. ==*/
+
 require get_template_directory() . '/inc/extras.php';
 
-/**
- * Customizer additions.
- */
+/*== Customizer additions. ==*/
+
 require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Load Jetpack compatibility file.
- */
+/*== Load Jetpack compatibility file. ==*/
+
 require get_template_directory() . '/inc/jetpack.php';

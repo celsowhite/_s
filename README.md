@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
 
-Developer Form Note
+Developer Note
 ===
 
 Ongoing additions to _s starter theme for my personal setup. Includes compass setup, flexslider, font awesome and a few other integrations I typically use for projects.
