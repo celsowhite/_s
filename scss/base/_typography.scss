@@ -1,0 +1,36 @@
+/*=== FONT FACE ===*/
+
+@include font-face("avenir", font-files("Avenir/avenir.woff", "Avenir/avenir.ttf", "Avenir/avenir.svg#AvenirNextLTPro-Regular"), "Avenir/avenir.eot?");
+
+/*=== FONT STYLES ===*/
+
+body, p, h1, h2, h3 {
+	font-family: 'brandon-grotesque', sans-serif;
+}
+
+body, p {
+	font-size: 20px;
+	font-weight: 300;
+}
+
+p {
+	margin-bottom: 20px;
+}
+
+h1 {
+	font-size: 50px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size: 40px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-size: 25px;
+	font-weight: 700;
+	text-transform: uppercase;
+}

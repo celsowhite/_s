@@ -8,6 +8,7 @@
  */
 
 if ( ! function_exists( '_s_setup' ) ) :
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -92,11 +93,12 @@ function _s_content_width() {
 }
 add_action( 'after_setup_theme', '_s_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
+
+/*==========================================
+REGISTER WIDGET AREA
+https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+==========================================*/
+
 function _s_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', '_s' ),
@@ -133,7 +135,7 @@ function _s_scripts() {
 
 	/*=== Flexslider Styles ===*/
 
-	wp_enqueue_style('flexslider', get_template_directory_uri() . '/css/flexslider/flexslider.css');
+	wp_enqueue_style('flexslider', get_template_directory_uri() . '/css/flexslider/flexslider.min.css');
 
 	wp_enqueue_script( '_s-modernizr', get_template_directory_uri() . '/js/modernizr/modernizr.custom.js', '','', true );
 

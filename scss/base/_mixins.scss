@@ -1,0 +1,52 @@
+/*=== Keyframes ===*/
+
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+/*=== Animation ===*/
+
+@mixin animation($animation_properties) {
+	-webkit-animation: #{$animation_properties};
+	-moz-animation: #{$animation_properties};
+	-o-animation: #{$animation_properties};
+	animation: #{$animation_properties};
+}
+
+/*=== Media Queries ===*/
+
+@mixin mobile() {
+	@media all and (max-width: 480px){
+		@content;
+	}
+}
+
+@mixin tablet() {
+	@media all and (max-width: 768px){
+		@content;
+	}
+}
+
+/*=== Overlay Mixin ===*/
+
+@mixin overlay($background) {
+  content: "";
+  position: absolute;
+  background: $background;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
