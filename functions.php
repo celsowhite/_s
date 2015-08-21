@@ -163,8 +163,6 @@ function _s_scripts() {
 
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
-/*=== Add google analytics to footer ===*/
-
 /*====================================================================
 
 Enqueue Typekit if Neccesary
@@ -267,6 +265,16 @@ function add_stories_taxonomies() {
   ));
 }
 add_action( 'init', 'add_stories_taxonomies', 0 );
+
+/*=============================================
+ACF OPTIONS PAGE
+=============================================*/
+
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page();
+	
+}
 
 /*=============================================
 CUSTOM LOGIN SCREEN
