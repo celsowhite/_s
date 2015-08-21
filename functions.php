@@ -137,10 +137,6 @@ function _s_scripts() {
 
 	wp_enqueue_style('flexslider', get_template_directory_uri() . '/css/flexslider/flexslider.min.css');
 
-	wp_enqueue_script( '_s-modernizr', get_template_directory_uri() . '/js/modernizr/modernizr.custom.js', '','', true );
-
-	wp_enqueue_script( '_s-classie', get_template_directory_uri() . '/js/classie/classie.js', '','', true );
-
 	/*=== Custom Scripts ===*/
 
 	wp_enqueue_script('_s-scripts', get_template_directory_uri() . '/js/scripts.js', '', '', true);
