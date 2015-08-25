@@ -19,7 +19,7 @@
 
 <!-- Google Analytics Pulled from Options Page Created by ACF -->
 
-<?php if(get_field('options_google_analytics','option')): ?>
+<?php /* if(get_field('options_google_analytics','option')): ?>
 
 	<script>
 		var _gaq = _gaq || [];
@@ -33,7 +33,7 @@
 		})();
 	</script>
 
-<?php endif; ?>
+<?php endif; */?>
 
 <?php wp_head(); ?>
 </head>

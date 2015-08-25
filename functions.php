@@ -137,6 +137,10 @@ function _s_scripts() {
 
 	wp_enqueue_style('flexslider', get_template_directory_uri() . '/css/flexslider/flexslider.min.css');
 
+	/*=== Animate CSS ===*/
+
+	wp_enqueue_style('animate_css', get_template_directory_uri() . '/css/animate/animate.min.css');
+
 	/*=== Custom Scripts ===*/
 
 	wp_enqueue_script('_s-scripts', get_template_directory_uri() . '/js/scripts.js', '', '', true);
