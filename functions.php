@@ -210,7 +210,7 @@ function custom_post_type_stories() {
 		'description'         => __( 'Stories'),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'revisions', 'page-attributes', 'custom-fields', 'excerpt'  ),
-		'hierarchical'        => true,
+		'hierarchical'        => false,
 		'taxonomies'          => array( 'story_category' ),
 		'public'              => true,
 		'show_ui'             => true,
