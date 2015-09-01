@@ -145,6 +145,10 @@ function _s_scripts() {
 
 	wp_enqueue_script('_s-scripts', get_template_directory_uri() . '/js/scripts.js', '', '', true);
 
+	/*=== FitVids ===*/
+
+	wp_enqueue_script('_s-fitvids', get_template_directory_uri() . '/js/fitvids/fitvids.min.js', '', '', true);
+
 	/*=== Flexslider JS ===*/
 
 	wp_enqueue_script( '_s-flexslider', get_template_directory_uri() . '/js/flexslider/jquery.flexslider-min.js', '','', true);
