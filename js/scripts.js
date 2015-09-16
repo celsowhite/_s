@@ -36,6 +36,22 @@ $j(document).ready(function() {
 
 	});
 
+	/*=== LinkedIn Share ===*/
+
+	$j('a.linkedin_share').click(function(e){
+
+		e.preventDefault();
+
+		var loc = $j(this).attr('href');
+
+		var title = encodeURIComponent($j(this).attr('title'));
+
+		var excerpt  = encodeURIComponent($j(this).attr('excerpt'));
+
+		window.open('https://www.linkedin.com/shareArticle?mini=true&url=' + loc + '&title=' + title + '&summary=' + excerpt);
+
+	});
+
 	/*================================= 
 	FITVIDS
 	=================================*/
