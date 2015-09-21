@@ -17,6 +17,10 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+<!-- Favicon -->
+
+<link rel="icon" type="image/png" href="" />
+
 <!-- Google Analytics Pulled from Options Page Created by ACF -->
 
 <?php /* if(get_field('options_google_analytics','option')): ?>
