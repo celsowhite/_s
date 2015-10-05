@@ -32,8 +32,20 @@
 	}
 }
 
+@mixin mobile_landscape() {
+	@media all and (max-width: 568px) {
+		@content;
+	}
+}
+
 @mixin tablet() {
 	@media all and (max-width: 768px){
+		@content;
+	}
+}
+
+@mixin desktop() {
+	@media all and (min-width: 768px){
 		@content;
 	}
 }

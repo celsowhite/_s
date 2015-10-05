@@ -6,6 +6,13 @@
 FONTS
 ==================================*/
 
+* {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 body, p, h1, h2, h3 {
 	font-family: sans-serif;
 }
