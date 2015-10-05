@@ -123,7 +123,7 @@ function _s_scripts() {
 
 	wp_enqueue_style( 'foundation', get_template_directory_uri() . '/css/foundation/foundation.min.css' );
 
-	wp_enqueue_style( 'foundation_normalize', get_template_directory_uri() . '/css/foundation/normalize.css' );
+	wp_enqueue_style( 'foundation_normalize', get_template_directory_uri() . '/css/foundation/normalize.min.css' );
 
 	/*=== Font Awesome ===*/
 
