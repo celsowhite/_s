@@ -22,17 +22,17 @@ $j(document).ready(function() {
 
 	});
 
-	/*== Twitter Share ==*/
-
 	$j('a.twitter_share').click(function(e){
 
 	    e.preventDefault();
 
 	    var loc = $j(this).attr('href');
 
+	    var via = $j(this).attr('via');
+
 	    var title  = encodeURIComponent($j(this).attr('title'));
 
-	    window.open('http://twitter.com/share?url=' + loc + '&text=' + title + '&via=charlieconard', 'twitterwindow', 'height=450, width=550, top='+($j(window).height()/2 - 225) +', left='+$j(window).width()/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+	    window.open('http://twitter.com/share?url=' + loc + '&via=' + via, 'twitterwindow', 'height=450, width=550, top='+($j(window).height()/2 - 225) +', left='+$j(window).width()/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
 
 	});
 
