@@ -6,7 +6,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var minifycss    = require('gulp-minify-css');
 var rename       = require('gulp-rename');
 var watch        = require('gulp-watch');
-var browserSync  = "browser-sync": "^2.10.0",
+var browserSync  = require('browser-sync');
 
 /*=== Sass -> Prefix -> Minify ===*/
 

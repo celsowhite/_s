@@ -9,6 +9,6 @@
     "gulp-minify-css": "^1.2.2",
     "gulp-rename":"^1.0.3",
     "gulp-watch":"^4.3.5",
-    "browser-sync": "^2.10.0",
+    "browser-sync": "^2.10.0"
   }
 }
