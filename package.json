@@ -1,0 +1,14 @@
+{
+  "name": "custom_underscores_theme",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "~3.9.0",
+    "gulp-sass": "^2.1.1",
+    "gulp-autoprefixer": "^6.2.0",
+    "gulp-minify-css": "^1.2.2",
+    "gulp-rename":"^1.0.3",
+    "gulp-watch":"^4.3.5",
+    "browser-sync": "^2.10.0",
+  }
+}

@@ -131,7 +131,7 @@ function _s_scripts() {
 
 	/*=== Compiled SCSS File ===*/
 
-	wp_enqueue_style( 'custom_styles', get_template_directory_uri() . '/css/style.css' );
+	wp_enqueue_style( 'custom_styles', get_template_directory_uri() . '/css/style.min.css' );
 
 	/*=== Flexslider Styles ===*/
 
@@ -316,7 +316,7 @@ add_filter('login_headerurl', 'my_loginURL');
 // Enque the login specific stylesheet for design customizations. CSS file is compiled through compass.
 
 function my_logincustomCSSfile() {
-    wp_enqueue_style('login-styles', get_template_directory_uri() . '/css/login.css');
+    wp_enqueue_style('login-styles', get_template_directory_uri() . '/css/login.min.css');
 }
 add_action('login_enqueue_scripts', 'my_logincustomCSSfile');
 
