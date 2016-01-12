@@ -3,7 +3,7 @@
 var gulp         = require('gulp');
 var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
-var minifycss    = require('gulp-minify-css');
+var cssnano      = require('gulp-cssnano');
 var rename       = require('gulp-rename');
 var watch        = require('gulp-watch');
 var browserSync  = require('browser-sync');
@@ -19,7 +19,7 @@ gulp.task('styles', function () {
             this.emit('end');
     })
     .pipe(autoprefixer({ browsers: ['last 2 versions'] }))
-    .pipe(minifycss())
+    .pipe(cssnano())
     .pipe(rename( {suffix: '.min'} ))
     .pipe(gulp.dest('./css'))
     .pipe(browserSync.stream());

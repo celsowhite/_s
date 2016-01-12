@@ -1,12 +1,18 @@
 {
   "name": "custom_underscores_theme",
   "version": "1.0.0",
-  "dependencies": {},
+  "description": "Gulp setup for wordpress theme.",
+  "author": "Celso White <celso@celsowhite.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/celsowhite/_s"
+  },
   "devDependencies": {
     "gulp": "~3.9.0",
-    "gulp-sass": "^2.1.1",
+    "gulp-sass": "^2.1.",
     "gulp-autoprefixer": "^3.0.2",
-    "gulp-minify-css": "^1.2.2",
+    "gulp-cssnano": "^2.1.0",
     "gulp-rename":"^1.0.3",
     "gulp-watch":"^4.3.5",
     "browser-sync": "^2.10.0"
