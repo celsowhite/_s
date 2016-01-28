@@ -15,15 +15,6 @@
 	}
 }
 
-/*=== Animation ===*/
-
-@mixin animation($animation_properties) {
-	-webkit-animation: #{$animation_properties};
-	-moz-animation: #{$animation_properties};
-	-o-animation: #{$animation_properties};
-	animation: #{$animation_properties};
-}
-
 /*=== Media Queries ===*/
 
 @mixin mobile() {
@@ -44,8 +35,14 @@
 	}
 }
 
+@mixin tablet_landscape() {
+	@media all and (max-width: 1024px){
+		@content;
+	}
+}
+
 @mixin desktop() {
-	@media all and (min-width: 768px){
+	@media all and (min-width: 1280px){
 		@content;
 	}
 }

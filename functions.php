@@ -157,6 +157,10 @@ function _s_scripts() {
 
 	wp_enqueue_script( '_s-magnific', get_template_directory_uri() . '/js/magnific/jquery.magnific-popup.min.js', '','', true);
 
+	/*=== Modernizr (Flexbox & Geolocation Detection) ===*/
+
+	wp_enqueue_script( '_s-modernizr', get_template_directory_uri() . '/js/modernizr/modernizr-custom.min.js', '','', true);
+
 	/*=== Magnific Popup CSS ===*/
 
 	wp_enqueue_style('magnific', get_template_directory_uri() . '/css/magnific/magnific-popup.min.css');
