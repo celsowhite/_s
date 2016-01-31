@@ -324,6 +324,15 @@ function my_logincustomCSSfile() {
 }
 add_action('login_enqueue_scripts', 'my_logincustomCSSfile');
 
+/*=============================================
+YOAST
+=============================================*/
+
+/*=== Adjust Metabox Priority
+
+add_filter( 'wpseo_metabox_prio', function() { return 'low';});
+
+===*/
 
 /*==========================================
 INCLUDES
