@@ -58,14 +58,6 @@ $j(document).ready(function() {
 
 	$j(".video_embed").fitVids();
 
-	/*================================= 
-	MAGNIFIC POPUP
-	=================================*/
-
-	$j('.example_link').magnificPopup({
-		type:'image'
-	});
-
 });
 
 $j(window).load(function() {

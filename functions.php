@@ -119,12 +119,6 @@ ENQUEUE SCRIPTS AND STYLES
 function _s_scripts() {
 	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
 
-	/*=== Minified Foundation 5 ===*/
-
-	wp_enqueue_style( 'foundation', get_template_directory_uri() . '/css/foundation/foundation.min.css' );
-
-	wp_enqueue_style( 'foundation_normalize', get_template_directory_uri() . '/css/foundation/normalize.min.css' );
-
 	/*=== Font Awesome ===*/
 
 	wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
@@ -153,19 +147,9 @@ function _s_scripts() {
 
 	wp_enqueue_script( '_s-flexslider', get_template_directory_uri() . '/js/flexslider/jquery.flexslider-min.js', '','', true);
 
-	/*=== Magnific Popup JS ===*/
-
-	wp_enqueue_script( '_s-magnific', get_template_directory_uri() . '/js/magnific/jquery.magnific-popup.min.js', '','', true);
-
 	/*=== Modernizr (Flexbox & Geolocation Detection) ===*/
 
 	wp_enqueue_script( '_s-modernizr', get_template_directory_uri() . '/js/modernizr/modernizr-custom.min.js', '','', true);
-
-	/*=== Magnific Popup CSS ===*/
-
-	wp_enqueue_style('magnific', get_template_directory_uri() . '/css/magnific/magnific-popup.min.css');
-
-	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 

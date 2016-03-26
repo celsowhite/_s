@@ -5,7 +5,7 @@ Developer Note
 
 Ongoing additions to _s starter theme for my personal setup. Includes gulp. Within gulp it parsing the scss file, autoprefixing, minifying css and injecting css through browsersync.
 
-Within the theme is flexslider, fontawesome and other useful jquery plugins to get started.
+Within the theme is fontawesome and other useful jquery plugins to get started.
 
 This will keep growing!
 

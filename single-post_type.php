@@ -1,10 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package _s
+ * The template for displaying all single posts from a specific custom post types.
  */
 
 get_header(); ?>
@@ -31,5 +27,4 @@ get_header(); ?>
 
 	</main>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
