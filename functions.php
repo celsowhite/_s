@@ -121,7 +121,7 @@ function _s_scripts() {
 
 	/*=== Font Awesome ===*/
 
-	wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
+	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome/font-awesome.min.css' );
 
 	/*=== Compiled SCSS File ===*/
 
@@ -194,27 +194,28 @@ CUSTOM POST TYPES
 function custom_post_type_stories() {
 
 	$labels = array(
-		'name'                => _x( 'Stories', 'Post Type General Name'),
-		'singular_name'       => _x( 'Stories', 'Post Type Singular Name'),
-		'menu_name'           => __( 'Stories'),
-		'parent_item_colon'   => __( ''),
-		'all_items'           => __( 'All Stories'),
-		'view_item'           => __( 'View Story'),
-		'add_new_item'        => __( 'Add New Story'),
-		'add_new'             => __( 'Add New'),
-		'edit_item'           => __( 'Edit Story'),
-		'update_item'         => __( 'Update Story'),
-		'search_items'        => __( 'Search Stories'),
-		'not_found'           => __( 'Not Found'),
-		'not_found_in_trash'  => __( 'Not found in Trash'),
+		'name'                => ('Stories'),
+		'singular_name'       => ('Stories'),
+		'menu_name'           => ('Stories'),
+		'parent_item_colon'   => (''),
+		'all_items'           => ('All Stories'),
+		'view_item'           => ('View Story'),
+		'add_new_item'        => ('Add New Story'),
+		'add_new'             => ('Add New'),
+		'edit_item'           => ('Edit Story'),
+		'update_item'         => ('Update Story'),
+		'search_items'        => ('Search Stories'),
+		'not_found'           => ('Not Found'),
+		'not_found_in_trash'  => ('Not found in Trash'),
 	);
 	
 	$args = array(
-		'label'               => __( 'stories'),
-		'description'         => __( 'Stories'),
+		'label'               => ('stories'),
+		'description'         => ('Stories'),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'revisions', 'page-attributes', 'custom-fields', 'excerpt'  ),
 		'hierarchical'        => false,
+		'rewrite'             => array('slug' => 'story'),
 		'taxonomies'          => array( 'story_category' ),
 		'public'              => true,
 		'show_ui'             => true,
@@ -244,21 +245,21 @@ CUSTOM TAXONOMY
 
 function add_stories_taxonomies() {
 
-  register_taxonomy('type', 'stories', array(
+  register_taxonomy('story_type', 'stories', array(
 
       'hierarchical' => true,
       'labels' => array(
-      'name' => _x( 'Type', 'taxonomy general name' ),
-      'singular_name' => _x( 'Type', 'taxonomy singular name' ),
-      'search_items' =>  __( 'Search Types' ),
-      'all_items' => __( 'All Types' ),
-      'parent_item' => __( 'Parent Type' ),
-      'parent_item_colon' => __( 'Parent Type:' ),
-      'edit_item' => __( 'Edit Type' ),
-      'update_item' => __( 'Update Type' ),
-      'add_new_item' => __( 'Add New Type' ),
-      'new_item_name' => __( 'New Type Name' ),
-      'menu_name' => __( 'Types' ),
+      'name' => ('Type'),
+      'singular_name' => ('Type'),
+      'search_items' =>  ('Search Types' ),
+      'all_items' => ('All Types' ),
+      'parent_item' => ('Parent Type' ),
+      'parent_item_colon' => ('Parent Type:' ),
+      'edit_item' => ('Edit Type' ),
+      'update_item' => ('Update Type' ),
+      'add_new_item' => ('Add New Type' ),
+      'new_item_name' => ('New Type Name' ),
+      'menu_name' => ('Types' ),
     ),
 
       'rewrite' => array(
