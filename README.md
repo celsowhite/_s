@@ -3,11 +3,11 @@
 Developer Note
 ===
 
-Ongoing additions to _s starter theme for my personal setup. Includes gulp. Within gulp it parsing the scss file, autoprefixing, minifying css and injecting css through browsersync.
+Ongoing additions to _s starter theme for my personal setup. Includes gulp. Within gulp it is parsing the scss file, autoprefixing, renaming and minifying the css file.
 
-Within the theme is fontawesome and other useful jquery plugins to get started.
+Within the theme is fontawesome, flexslider and some other useful scripts and plugins I typically use on projects.
 
-This will keep growing!
+This will keep evolving!
 
 Installation
 ===
@@ -17,7 +17,6 @@ Installation
 - Activate the theme.
 - Make sure node, sass and gulp are installed on your local machine.
 - Run npm install.
-- Update the proxy for browsersync so it points to your local URL.
 - Run gulp.
 - Start coding your new theme!
 
