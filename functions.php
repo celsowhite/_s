@@ -17,15 +17,15 @@ if ( ! function_exists( '_s_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function _s_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on _s, use a find and replace
-	 * to change '_s' to the name of your theme in all the template files
-	 */
+	
+	/*==========================================
+	MAKE THEME AVAILABLE FOR TRANSLATION
+	==========================================*/
+	
 	load_theme_textdomain( '_s', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
+
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
@@ -36,14 +36,16 @@ function _s_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
+	/*==========================================
+	ENABLE SUPPORT FOR POST THUMBNAILS ON POSTS AND PAGES
+	==========================================*/
+
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	/*==========================================
+	SETUP NAVIGATION MENUS
+	==========================================*/
+
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', '_s' ),
 	) );
@@ -60,10 +62,10 @@ function _s_setup() {
 		'caption',
 	) );
 
-	/*
-	 * Enable support for Post Formats.
-	 * See https://developer.wordpress.org/themes/functionality/post-formats/
-	 */
+	/*==========================================
+	ENABLE SUPPORT FOR POST FORMATS
+	==========================================*/
+
 	add_theme_support( 'post-formats', array(
 		'aside',
 		'image',
@@ -78,7 +80,8 @@ function _s_setup() {
 		'default-image' => '',
 	) ) );
 }
-endif; // _s_setup
+endif;
+
 add_action( 'after_setup_theme', '_s_setup' );
 
 /**
@@ -117,39 +120,40 @@ ENQUEUE SCRIPTS AND STYLES
 ==========================================*/
 
 function _s_scripts() {
+	
+	// Default theme style
+
 	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
 
-	/*=== Font Awesome ===*/
+	// Font awesome
 
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome/font-awesome.min.css' );
 
-	/*=== Compiled SCSS File ===*/
+	// Compiled SCSS File
 
 	wp_enqueue_style( 'custom_styles', get_template_directory_uri() . '/css/style.min.css' );
 
-	/*=== Flexslider Styles ===*/
+	// Flexslider Styles
 
 	wp_enqueue_style('flexslider', get_template_directory_uri() . '/css/flexslider/flexslider.min.css');
 
-	/*=== Animate CSS ===*/
+	wp_enqueue_script( '_s-flexslider', get_template_directory_uri() . '/js/flexslider/jquery.flexslider-min.js', '','', true);
+
+	// Animate CSS
 
 	wp_enqueue_style('animate_css', get_template_directory_uri() . '/css/animate/animate.min.css');
 
-	/*=== Custom Scripts ===*/
-
-	wp_enqueue_script('_s-scripts', get_template_directory_uri() . '/js/scripts.js', '', '', true);
-
-	/*=== FitVids ===*/
+	// FitVids
 
 	wp_enqueue_script('_s-fitvids', get_template_directory_uri() . '/js/fitvids/fitvids.min.js', '', '', true);
 
-	/*=== Flexslider JS ===*/
-
-	wp_enqueue_script( '_s-flexslider', get_template_directory_uri() . '/js/flexslider/jquery.flexslider-min.js', '','', true);
-
-	/*=== Modernizr (Flexbox & Geolocation Detection) ===*/
+	// Modernizr (Flexbox & Geolocation Detection)
 
 	wp_enqueue_script( '_s-modernizr', get_template_directory_uri() . '/js/modernizr/modernizr-custom.min.js', '','', true);
+
+	// Custom Scripts
+
+	wp_enqueue_script('_s-scripts', get_template_directory_uri() . '/js/scripts.js', '', '', true);
 
 	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
@@ -157,7 +161,7 @@ function _s_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	/*=== Wordpress Default Jquery ===*/
+	// Wordpress Default Jquery
 
 	if (!is_admin()) {
 		wp_enqueue_script('jquery');

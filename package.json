@@ -1,7 +1,7 @@
 {
   "name": "custom_underscores_theme",
   "version": "1.0.0",
-  "description": "Gulp setup for wordpress theme.",
+  "description": "Gulp setup for Wordpress theme.",
   "author": "Celso White <celso@celsowhite.com>",
   "license": "MIT",
   "repository": {
