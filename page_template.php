@@ -5,30 +5,26 @@ Template Name: Page Template
 
 get_header(); ?>
 
-	<?php while ( have_posts() ) : the_post(); ?>
+	<main id="main post-<?php the_ID(); ?>" class="main_wrapper" role="main">
 
-		<main id="main post-<?php the_ID(); ?>" class="main_wrapper" role="main">
+		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<header class="page_header">
+				<?php the_title(); ?>
+			</header>
 
-				<header class="page_header">
-					<?php the_title(); ?>
-				</header>
+			<div class="page_content">
+				<?php the_content(); ?>
+			</div>
 
-				<div class="page_content">
-					<?php the_content(); ?>
-				</div>
+			<?php
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+			?>
 
-				<?php
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
+		<?php endwhile; ?>
 
-			<?php endwhile; ?>
-
-		</main>
-
-	<?php endwhile;?>
+	</main>
 
 <?php get_footer(); ?>
