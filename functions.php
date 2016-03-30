@@ -147,7 +147,7 @@ function _s_scripts() {
 
 	// Font awesome
 
-	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome/font-awesome.min.css' );
+	wp_enqueue_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' );
 
 	// Compiled SCSS File
 
