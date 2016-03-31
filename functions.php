@@ -173,7 +173,7 @@ function _s_scripts() {
 
 	// Custom Scripts
 
-	wp_enqueue_script('_s-scripts', get_template_directory_uri() . '/js/scripts.js', '', '', true);
+	wp_enqueue_script('_s-scripts', get_template_directory_uri() . '/js/scripts.min.js', '', '', true);
 
 	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
