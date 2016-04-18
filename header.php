@@ -30,7 +30,10 @@
 
 	<header class="site_header" role="banner">
 		<nav class="main_navigation" role="navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			<div class="logo">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"></a>
+			</div>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container' => '' ) ); ?>
 		</nav>
 	</header>
 
