@@ -6,7 +6,8 @@ var autoprefixer = require('gulp-autoprefixer');
 var cssnano      = require('gulp-cssnano');
 var rename       = require('gulp-rename');
 var watch        = require('gulp-watch');
-var minify       = require('gulp-minify');
+var uglify       = require('gulp-uglify');
+var gutil        = require('gulp-util');
 
 /*=== Sass -> Prefix -> Minify ===*/
 
@@ -25,11 +26,10 @@ gulp.task('styles', function () {
 
 gulp.task('js-minify', function(){
 
-	gulp.src('./js/scripts.js')
-	.pipe(minify({ 
-		ext: { min:'.min.js'}
-	}))
-	.pipe(gulp.dest('./js'))
+  gulp.src('./js/scripts.js')
+  .pipe(uglify().on('error', gutil.log))
+  .pipe(rename({suffix: '.min'}))
+  .pipe(gulp.dest('./js'))
 
 });
 
@@ -37,9 +37,9 @@ gulp.task('js-minify', function(){
 
 gulp.task('watch', function() {
 
-  	gulp.watch('./scss/**/*.scss', ['styles']);
+    gulp.watch('./scss/**/*.scss', ['styles']);
 
-  	gulp.watch('./js/scripts.js', ['js-minify']);
+    gulp.watch('./js/scripts.js', ['js-minify']);
 
 });
 
