@@ -11,35 +11,74 @@ FONTS
     -moz-osx-font-smoothing: grayscale;
 }
 
-body, p, h1, h2, h3 {
-	font-family: sans-serif;
+body, p {
+	@include effra(400);
+	font-size: 18px;
+	line-height: 26px;
 }
 
-body, p {
-	font-size: 20px;
-	font-weight: 300;
+body {
+	background-color: ;
 }
 
 p {
 	margin-bottom: 20px;
+
+	&.header {
+		font-size: 27px;
+		line-height: 29px;
+	}
+
+	&.large {
+		font-size: 23px;
+		line-height: 27px;
+	}
+
+	&.small {
+		font-size: 14px;
+		line-height: 24px;
+	}
 }
 
 h1 {
-	font-size: 50px;
-	font-weight: 700;
-	text-transform: uppercase;
+	@include effra(900)
+	font-size: 48px;
+	line-height: 52px;
 }
 
 h2 {
-	font-size: 40px;
-	font-weight: 700;
-	text-transform: uppercase;
+	@include effra(700)
+	font-size: 24px;
+	line-height: 27px;
 }
 
 h3 {
-	font-size: 25px;
-	font-weight: 700;
-	text-transform: uppercase;
+	@include effra(700)
+	font-size: 14px;
+	line-height: 17px;
+}
+
+p, h1, h2, h3 {
+	color: $textgrey;
+	margin: 0px 0px 20px;
+}
+
+h1, h2, h3 {
+	letter-spacing: .4px;
+}
+
+a, a:visited, a:active, a:focus {
+	color: $orange;
+	text-decoration: none;
+	outline: 0;
+}
+
+a {
+	transition: color .2s ease-in-out;
+
+	&:hover {
+		color: $textgrey;
+	}
 }
 
 /*==================================

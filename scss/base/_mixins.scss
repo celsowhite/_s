@@ -1,21 +1,15 @@
-/*=== Keyframes ===*/
+/*================
+FONTS
+================*/
 
-@mixin keyframes($name) {
-	@-webkit-keyframes #{$name} {
-		@content;
-	}
-	@-moz-keyframes #{$name} {
-		@content;
-	}
-	@-ms-keyframes #{$name} {
-		@content;
-	}
-	@keyframes #{$name} {
-		@content;
-	}
+@mixin effra($fontweight) {
+	font-family: 'effra', sans-serif;
+	font-weight: $fontweight;
 }
 
-/*=== Media Queries ===*/
+/*================
+MEDIA QUERIES
+================*/
 
 @mixin mobile() {
 	@media all and (max-width: 480px){
@@ -47,7 +41,9 @@
 	}
 }
 
-/*=== Overlay Mixin ===*/
+/*================
+OVERLAY
+================*/
 
 @mixin overlay($background) {
   content: "";
