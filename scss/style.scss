@@ -77,75 +77,129 @@ a {
 	transition: color .2s ease-in-out;
 
 	&:hover {
-		color: $textgrey;
+		color: $white;
 	}
+}
+
+/*==================================
+HELPERS
+==================================*/
+
+/*=== Colors ===*/
+
+.white {
+	color: $white;
+}
+
+/*=== Margins ===*/
+
+.margin_bottom_0 {
+	margin-bottom: 0px;
+}
+
+/*=== Fonts ===*/
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+/*==================================
+COMPONENTS
+==================================*/
+
+/*=== Lists ===*/
+
+ul, ol {
+	margin: 0px;
+	padding: 0px;
+}
+
+/*=== Buttons ===*/
+
+.color_button {
+	display: inline-block;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 22px;
+	padding: 20px 50px;
+	background: $white;
+	color: $white;
+}
+
+.transparent_button {
+	display: inline-block;
+	font-weight: 700;
+	font-size: 15px;
+	line-height: 20px;
+	padding: 10px 20px;
+	background: transparent;
+	border: 2px solid;
+	color: inherit;
+}
+
+/*=== Social Icons ===*/
+
+ul.social_icons li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/*=== Close Icon ===*/
+
+.close_icon {
+  position: relative;
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover {
+    &::before, &::after {
+      background: $black;
+    }
+  }
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #000;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
 }
 
 /*==================================
 GRID
 ==================================*/
 
-/*=== Full Width Container ===*/
-
-.x_container {
-    display: block;
-    width: 100%;
-    padding: 20px 0px;
-}
-
-/*=== Non Flexbox Grid (Fallback) ===*/
-
-.x_row {
-    display: block;
-    width: 90%;
-    margin: 0 auto;
-
-    .content {
-    	background: #e1e1e1;
-	    color: #fff;
-	    padding: 10px;
-    }
-
-    @include desktop {
-    	width: 1200px;
-    }
+.futuro_row {
+    display: flex;
+    flex-flow: row wrap;
+    width: auto;
+    margin: 0px -7.5px;
 }
 
 .column_1, .column_1_2, .column_1_3, .column_2_3, .column_1_4, .column_3_4 {
-	margin: 0px 0px 10px;
-	padding: 0px 10px;
+	position: relative;
+	margin: 0px 0px 15px;
+	padding: 0px 7.5px;
 	float: left;
 	display: inline-block;
-}
 
-/*=== Flexbox Grid ===*/ 
-
-.flexbox {
-
-	.x_row {
-	    display: flex;
-	    flex-flow: row wrap;
-	    width: 90%;
-	    margin: 0 auto;
-
-	    .content {
-	    	background: #e1e1e1;
-		    color: #fff;
-		    padding: 10px;
-	    }
-
-	    @include desktop {
-	    	width: 1200px;
-	    }
+	img {
+		display: block;
 	}
-
-	.column_1, .column_1_2, .column_1_3, .column_2_3, .column_1_4, .column_3_4 {
-		margin: 0px 0px 10px;
-		padding: 0px 10px;
-		float: left;
-		display: inline-block;
-	}
-
 }
 
 /*=== Columns ===*/
@@ -196,4 +250,18 @@ GRID
     @include mobile_landscape {
     	width: 100%;
     }
+}
+
+/*=== Stretch columns so their content blocks are the same height ===*/
+
+.stretch_height {
+    display: flex;
+    flex-direction: column;
+}
+
+.stretch_height .content {
+    position: relative;
+ 	display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
 }
