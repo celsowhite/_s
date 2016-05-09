@@ -56,6 +56,12 @@ $j(document).ready(function() {
 	FITVIDS
 	=================================*/
 
+	/*=== Wrap All Iframes with 'video_embed' for responsive videos ===*/
+
+	$j('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').wrap("<div class='video_embed'/>");
+
+	/*=== Target div for fitVids ===*/
+
 	$j(".video_embed").fitVids();
 
 });
