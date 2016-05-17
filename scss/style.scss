@@ -153,6 +153,7 @@ ul.social_icons li {
   height: 17px;
   overflow: hidden;
   cursor: pointer;
+
   &:hover {
     &::before, &::after {
       background: $black;
@@ -168,6 +169,7 @@ ul.social_icons li {
     left: 0;
     margin-top: -1px;
     background: #000;
+    backface-visibility: hidden;
   }
 
   &::before {
@@ -183,7 +185,7 @@ ul.social_icons li {
 GRID
 ==================================*/
 
-.futuro_row {
+.x_row {
     display: flex;
     flex-flow: row wrap;
     width: auto;
@@ -261,7 +263,49 @@ GRID
 
 .stretch_height .content {
     position: relative;
- 	display: flex;
+ 	  display: flex;
     flex-direction: column;
     flex: 1 0 auto;
+}
+
+/*==================================
+NAVIGATION
+==================================*/
+
+/*=== Mobile Menu ===*/
+
+ul#mobile_menu {
+    
+    position: relative;
+    z-index: 8;
+    max-height: 0px;
+    opacity: 0;
+    list-style-type: none;
+    background: white;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    transition: all .5s ease-in-out;
+
+    &.open {
+        max-height: 500px;
+        opacity: 1;
+        z-index: 9;
+        margin-bottom: 15px;
+    }
+
+}
+
+ul#mobile_menu li {
+    border-bottom: 1px solid grey;
+    padding: 10px 0px;
+    font-size: 14px;
+
+    a {
+        color: grey;
+
+        &:hover, &:focus {
+            color: orange;
+        }
+    }
 }

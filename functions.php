@@ -159,10 +159,6 @@ function _s_scripts() {
 
 	wp_enqueue_script( '_s-flexslider', get_template_directory_uri() . '/js/flexslider/jquery.flexslider-min.js', '','', true);
 
-	// Animate CSS
-
-	wp_enqueue_style('animate_css', get_template_directory_uri() . '/css/animate/animate.min.css');
-
 	// FitVids
 
 	wp_enqueue_script('_s-fitvids', get_template_directory_uri() . '/js/fitvids/fitvids.min.js', '', '', true);
@@ -298,6 +294,17 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();
 	
 }
+
+/*==========================================
+LIMIT POST REVISIONS
+==========================================*/
+
+function limit_post_revisions( $num, $post ) {
+    $num = 3;
+    return $num;
+}
+
+add_filter( 'wp_revisions_to_keep', 'limit_post_revisions', 10, 2 );
 
 /*=============================================
 PAGE EXCERPTS

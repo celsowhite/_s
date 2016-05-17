@@ -37,4 +37,6 @@
 		</nav>
 	</header>
 
+	<?php wp_nav_menu( array( 'menu' => 'Mobile Menu', 'menu_id' => 'mobile_menu', 'container' => false ) ); ?>
+
 	<div id="content" class="main_content">

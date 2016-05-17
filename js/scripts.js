@@ -7,6 +7,15 @@ $j(document).ready(function() {
 	"use strict"; // Ensure javascript is in strict mode and catches errors.
 
 	/*================================= 
+	MOBILE MENU DRAWER
+	=================================*/
+
+	$j('a.nav_item.menu_icon').click(function(e){
+		e.preventDefault();
+		$j('ul#mobile_menu').toggleClass('open');
+	});
+
+	/*================================= 
 	SOCIAL SHARE
 	=================================*/
 
