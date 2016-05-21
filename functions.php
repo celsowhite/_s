@@ -145,10 +145,6 @@ function _s_scripts() {
 		wp_enqueue_script('jquery-migrate');
 	}
 
-	// Font awesome
-
-	wp_enqueue_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' );
-
 	// Compiled SCSS File
 
 	wp_enqueue_style( 'custom_styles', get_template_directory_uri() . '/css/style.min.css' );
@@ -166,6 +162,10 @@ function _s_scripts() {
 	// Modernizr (Flexbox & Geolocation Detection)
 
 	wp_enqueue_script( '_s-modernizr', get_template_directory_uri() . '/js/modernizr/modernizr-custom.min.js', '','', true);
+
+	// Font awesome
+
+	wp_enqueue_script('font-awesome', 'https://use.fontawesome.com/bfa5b116b0.js', '', '', true);
 
 	// Custom Scripts
 
