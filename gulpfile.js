@@ -33,7 +33,7 @@ gulp.task('js-minify', function(){
 
 });
 
-/*=== Start Server with BrowserSync and Watch Styles ===*/
+/*=== Watch Styles & Scripts ===*/
 
 gulp.task('watch', function() {
 
