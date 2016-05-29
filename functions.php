@@ -9,13 +9,14 @@
 
 if ( ! function_exists( '_s_setup' ) ) :
 
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
+/*=========================
+Sets up theme defaults and registers support for various WordPress features.
+ 
+Note that this function is hooked into the after_setup_theme hook, which
+runs before the init hook. The init hook is too late for some features, such
+as indicating support for post thumbnails.
+========================*/
+
 function _s_setup() {
 	
 	/*==========================================
@@ -28,12 +29,10 @@ function _s_setup() {
 
 	add_theme_support( 'automatic-feed-links' );
 
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
+	/*==========================================
+	LET WORDPRESS MANAGE THE DOCUMENT TITLE
+	==========================================*/
+
 	add_theme_support( 'title-tag' );
 
 	/*==========================================
@@ -50,10 +49,11 @@ function _s_setup() {
 		'primary' => esc_html__( 'Primary Menu', '_s' ),
 	) );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
+	/*==========================================
+	Switch default core markup for search form, comment form, and comments
+	to output valid HTML5.
+	==========================================*/
+
 	add_theme_support( 'html5', array(
 		'search-form',
 		'comment-form',
@@ -74,23 +74,13 @@ function _s_setup() {
 		'link',
 	) );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( '_s_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 }
 endif;
 
 add_action( 'after_setup_theme', '_s_setup' );
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
+ // Set the content width in pixels, based on the theme's design and stylesheet.
+
 function _s_content_width() {
 	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
 }
@@ -108,7 +98,6 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 /*==========================================
 REGISTER WIDGET AREA
-https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
 ==========================================*/
 
 function _s_widgets_init() {
@@ -257,32 +246,33 @@ CUSTOM TAXONOMY
 
 /*=== Stories Taxonomy ===*/
 
-function add_stories_taxonomies() {
+function add_stories_taxonomy() {
+	$labels = array(
+		'name' => ('Type'),
+      	'singular_name' => ('Type'),
+      	'search_items' =>  ('Search Types' ),
+      	'all_items' => ('All Types' ),
+      	'parent_item' => ('Parent Type' ),
+      	'parent_item_colon' => ('Parent Type:' ),
+      	'edit_item' => ('Edit Type' ),
+      	'update_item' => ('Update Type' ),
+      	'add_new_item' => ('Add New Type' ),
+      	'new_item_name' => ('New Type Name' ),
+      	'menu_name' => ('Types' ),
+	);
 
-  register_taxonomy('story_type', 'stories', array(
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'genre' ),
+	);
 
-      'hierarchical' => true,
-      'labels' => array(
-      'name' => ('Type'),
-      'singular_name' => ('Type'),
-      'search_items' =>  ('Search Types' ),
-      'all_items' => ('All Types' ),
-      'parent_item' => ('Parent Type' ),
-      'parent_item_colon' => ('Parent Type:' ),
-      'edit_item' => ('Edit Type' ),
-      'update_item' => ('Update Type' ),
-      'add_new_item' => ('Add New Type' ),
-      'new_item_name' => ('New Type Name' ),
-      'menu_name' => ('Types' ),
-    ),
-
-      'rewrite' => array(
-      'slug' => 'type', 
-      'with_front' => false,
-      'hierarchical' => false
-    ),
-  ));
+	register_taxonomy( 'story_type', array( 'post' ), $args );
 }
+
 add_action( 'init', 'add_stories_taxonomies', 0 );
 
 /*=============================================
