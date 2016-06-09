@@ -154,6 +154,8 @@ textarea {
 
 button {
 	overflow: visible;
+	background: 0;
+    border: 0;
 }
 
 input {
