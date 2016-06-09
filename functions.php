@@ -273,7 +273,7 @@ function add_stories_taxonomy() {
 	register_taxonomy( 'story_type', array( 'post' ), $args );
 }
 
-add_action( 'init', 'add_stories_taxonomies', 0 );
+add_action( 'init', 'add_stories_taxonomy', 0 );
 
 /*=============================================
 ACF OPTIONS PAGE
