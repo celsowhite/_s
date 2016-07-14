@@ -317,7 +317,7 @@ function my_loginURL() {
 }
 add_filter('login_headerurl', 'my_loginURL');
 
-// Enque the login specific stylesheet for design customizations. CSS file is compiled through compass.
+// Enqueue the login specific stylesheet for design customizations.
 
 function my_logincustomCSSfile() {
     wp_enqueue_style('login-styles', get_template_directory_uri() . '/css/login.min.css');
