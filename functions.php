@@ -313,8 +313,9 @@ CUSTOM LOGIN SCREEN
 // Change the login logo URL
 
 function my_loginURL() {
-    return 'http://loginurl.com';
+    return esc_url( home_url( '/' ) );
 }
+
 add_filter('login_headerurl', 'my_loginURL');
 
 // Enqueue the login specific stylesheet for design customizations.
