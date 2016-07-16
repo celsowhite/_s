@@ -334,6 +334,17 @@ add_filter( 'wpseo_metabox_prio', function() { return 'low';});
 
 ===*/
 
+/*=============================================
+DISALLOW FILE EDIT
+Remove the ability to edit theme and plugins via the wp-admin.
+=============================================*/
+
+function disable_file_editting() {
+  define('DISALLOW_FILE_EDIT', TRUE);
+}
+
+add_action('init','disable_file_editting');
+
 /*==========================================
 INCLUDES
 ==========================================*/
