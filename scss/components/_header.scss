@@ -1,0 +1,43 @@
+/*==================================
+General Header
+==================================*/
+
+/*==================================
+Mobile Menu
+==================================*/
+
+ul#mobile_menu {
+    
+    position: relative;
+    z-index: 8;
+    max-height: 0px;
+    opacity: 0;
+    list-style-type: none;
+    background: white;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    transition: all .5s ease-in-out;
+
+    &.open {
+        max-height: 500px;
+        opacity: 1;
+        z-index: 9;
+        margin-bottom: 15px;
+    }
+
+}
+
+ul#mobile_menu li {
+    border-bottom: 1px solid grey;
+    padding: 10px 0px;
+    font-size: 14px;
+
+    a {
+        color: grey;
+
+        &:hover, &:focus {
+            color: orange;
+        }
+    }
+}

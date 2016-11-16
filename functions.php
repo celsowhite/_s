@@ -18,12 +18,6 @@ as indicating support for post thumbnails.
 ========================*/
 
 function _s_setup() {
-	
-	/*==========================================
-	MAKE THEME AVAILABLE FOR TRANSLATION
-	==========================================*/
-	
-	load_theme_textdomain( '_s', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 
@@ -140,17 +134,13 @@ function _s_scripts() {
 
 	// Flexslider Styles
 
-	wp_enqueue_style('flexslider', get_template_directory_uri() . '/css/flexslider/flexslider.min.css');
+	wp_enqueue_style('flexslider', get_template_directory_uri() . '/css/plugins/flexslider/flexslider.min.css');
 
-	wp_enqueue_script( '_s-flexslider', get_template_directory_uri() . '/js/flexslider/jquery.flexslider-min.js', '','', true);
+	wp_enqueue_script( '_s-flexslider', get_template_directory_uri() . '/js/plugins/flexslider/jquery.flexslider-min.js', '','', true);
 
 	// FitVids
 
-	wp_enqueue_script('_s-fitvids', get_template_directory_uri() . '/js/fitvids/fitvids.min.js', '', '', true);
-
-	// Modernizr (Flexbox & Geolocation Detection)
-
-	wp_enqueue_script( '_s-modernizr', get_template_directory_uri() . '/js/modernizr/modernizr-custom.min.js', '','', true);
+	wp_enqueue_script('_s-fitvids', get_template_directory_uri() . '/js/plugins/fitvids/fitvids.min.js', '', '', true);
 
 	// Font awesome
 
@@ -159,8 +149,6 @@ function _s_scripts() {
 	// Custom Scripts
 
 	wp_enqueue_script('_s-scripts', get_template_directory_uri() . '/js/scripts.min.js', '', '', true);
-
-	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -280,9 +268,7 @@ ACF OPTIONS PAGE
 =============================================*/
 
 if( function_exists('acf_add_options_page') ) {
-
 	acf_add_options_page();
-	
 }
 
 /*==========================================
@@ -329,11 +315,11 @@ add_action('login_enqueue_scripts', 'my_logincustomCSSfile');
 YOAST
 =============================================*/
 
-/*=== Adjust Metabox Priority
+// Adjust Metabox Priority
 
-add_filter( 'wpseo_metabox_prio', function() { return 'low';});
-
-===*/
+if( function_exists('wpseo_metabox_prio') ) {
+	add_filter( 'wpseo_metabox_prio', function() { return 'low';});
+}
 
 /*=============================================
 DISALLOW FILE EDIT

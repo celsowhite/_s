@@ -1,5 +1,17 @@
+// Base
+
 @import "base/_variables.scss";
 @import "base/_mixins.scss";
+@import "base/_fonts.scss";
+
+// Components 
+
+@import "components/_header.scss";
+@import "components/_footer.scss";
+
+// Pages
+
+@import "pages/_homepage.scss";
 
 /*==================================
 FONTS
@@ -12,13 +24,12 @@ FONTS
 }
 
 body, p {
-	@include effra(400);
 	font-size: 18px;
 	line-height: 26px;
 }
 
 body {
-	background-color: $black;
+	background-color: $white;
 }
 
 p {
@@ -41,19 +52,16 @@ p {
 }
 
 h1 {
-	@include effra(900)
 	font-size: 48px;
 	line-height: 52px;
 }
 
 h2 {
-	@include effra(700)
 	font-size: 24px;
 	line-height: 27px;
 }
 
 h3 {
-	@include effra(700)
 	font-size: 14px;
 	line-height: 17px;
 }
@@ -204,6 +212,12 @@ GRID
 	}
 }
 
+.flex_vertical_center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /*=== Columns ===*/
 
 .column_1 {
@@ -266,46 +280,4 @@ GRID
  	  display: flex;
     flex-direction: column;
     flex: 1 0 auto;
-}
-
-/*==================================
-NAVIGATION
-==================================*/
-
-/*=== Mobile Menu ===*/
-
-ul#mobile_menu {
-    
-    position: relative;
-    z-index: 8;
-    max-height: 0px;
-    opacity: 0;
-    list-style-type: none;
-    background: white;
-    width: 90%;
-    margin: 0 auto;
-    text-align: center;
-    transition: all .5s ease-in-out;
-
-    &.open {
-        max-height: 500px;
-        opacity: 1;
-        z-index: 9;
-        margin-bottom: 15px;
-    }
-
-}
-
-ul#mobile_menu li {
-    border-bottom: 1px solid grey;
-    padding: 10px 0px;
-    font-size: 14px;
-
-    a {
-        color: grey;
-
-        &:hover, &:focus {
-            color: orange;
-        }
-    }
 }

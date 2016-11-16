@@ -26,7 +26,6 @@
 
 <body <?php body_class(); ?>>
 <div id="page">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
 	<header class="site_header" role="banner">
 		<nav class="main_navigation" role="navigation">
