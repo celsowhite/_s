@@ -16,7 +16,7 @@ gulp.task('styles', function () {
 
     gulp.src('./scss/**/*.scss')
     .pipe(sass().on('error', notify.onError("Error: <%= error.message %>")))
-    .pipe(autoprefixer({ browsers: ['last 3 versions'] }))
+    .pipe(autoprefixer({ browsers: ['iOS >= 7','last 2 versions'] }))
     .pipe(cssmin())
     .pipe(rename( {suffix: '.min'} ))
     .pipe(gulp.dest('./css'))
