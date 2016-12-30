@@ -25,7 +25,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page">
 
 	<header class="site_header" role="banner">
 		<nav class="main_navigation" role="navigation">

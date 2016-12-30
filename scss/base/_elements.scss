@@ -1,0 +1,99 @@
+/*==================================
+HELPERS
+==================================*/
+
+/*=== Colors ===*/
+
+.white {
+  color: $white;
+}
+
+/*=== Margins ===*/
+
+.margin_bottom_0 {
+  margin-bottom: 0px;
+}
+
+/*=== Fonts ===*/
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/*==================================
+COMPONENTS
+==================================*/
+
+/*=== Lists ===*/
+
+ul, ol {
+	margin: 0px;
+	padding: 0px;
+}
+
+/*=== Buttons ===*/
+
+.color_button {
+	display: inline-block;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 22px;
+	padding: 20px 50px;
+	background: $white;
+	color: $white;
+}
+
+.transparent_button {
+	display: inline-block;
+	font-weight: 700;
+	font-size: 15px;
+	line-height: 20px;
+	padding: 10px 20px;
+	background: transparent;
+	border: 2px solid;
+	color: inherit;
+}
+
+/*=== Social Icons ===*/
+
+ul.social_icons li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/*=== Close Icon ===*/
+
+.close_icon {
+  position: relative;
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    &::before, &::after {
+      background: $black;
+    }
+  }
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #000;
+    backface-visibility: hidden;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
