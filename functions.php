@@ -312,9 +312,7 @@ YOAST
 
 // Adjust Metabox Priority
 
-if( function_exists('wpseo_metabox_prio') ) {
-	add_filter( 'wpseo_metabox_prio', function() { return 'low';});
-}
+add_filter( 'wpseo_metabox_prio', function() { return 'low';});
 
 /*=============================================
 DISALLOW FILE EDIT
