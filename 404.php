@@ -9,21 +9,11 @@
 
 get_header(); ?>
 
-	<main id="main" class="main_wrapper" role="main">
-
-		<header class="page_header">
-			<?php the_title(); ?>
-		</header>
-
-		<div class="page_content">
-			<?php the_content(); ?>
+	<main class="main_wrapper">
+	
+		<div class="container">
+			<h1>Page Not Found</h1>
 		</div>
-
-		<?php
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-		?>
 
 	</main>
 
