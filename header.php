@@ -26,15 +26,28 @@
 
 <body <?php body_class(); ?>>
 
-	<header class="site_header" role="banner">
-		<nav class="main_navigation" role="navigation">
-			<div class="logo">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"></a>
-			</div>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container' => '' ) ); ?>
-		</nav>
+	<header class="main_header">
+		<div class="container">
+			<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<img src="<?php echo get_template_directory_uri() . '/img/logo/logo_dark.png'; ?>" />
+			</a>
+			<nav class="main_navigation">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container' => '' ) ); ?>
+			</nav>
+		</div>
 	</header>
 
-	<?php wp_nav_menu( array( 'menu' => 'Mobile Menu', 'menu_id' => 'mobile_menu', 'container' => false ) ); ?>
+	<header class="mobile_header">
+		<div class="container">
+			<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<img src="<?php echo get_template_directory_uri() . '/img/logo/logo_dark.png'; ?>" />
+			</a>
+			<span class="menu_icon"></span>
+		</div>
+	</header>
+
+	<nav class="mobile_navigation">
+		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => '', 'container' => '' ) ); ?>
+	</nav>
 
 	<div id="content" class="main_content">

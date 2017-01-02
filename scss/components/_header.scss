@@ -1,20 +1,105 @@
 /*==================================
-General Header
+Main Header
 ==================================*/
+
+header.main_header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 20px 0;
+
+    @include tablet {
+        display: none;
+    }
+}
+
+// Logo
+
+a.logo {
+    display: block;
+    width: 200px;
+}
+
+a.logo img {
+    display: block;
+}
+
+/*==================================
+Main Navigation
+==================================*/
+
+nav.main_navigation ul {
+    margin: 0;
+}
+
+nav.main_navigation li {
+    display: inline-block;
+    margin: 0 10px;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 15px;
+    letter-spacing: .1em;
+
+    &:last-child {
+        margin: 0 0 0 10px;
+    }
+}
+
+// Active menu item / Hover
+
+nav.main_navigation li.current-menu-item a, nav.main_navigation li a:hover {
+    color: $black;
+}
+
+/*==================================
+Mobile Header
+==================================*/
+
+header.mobile_header {
+    display: none;
+    padding: 10px 0;
+
+    @include tablet {
+        display: block;
+    }
+}
+
+header.mobile_header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu_icon {
+    position: relative;
+    border-top: 2px solid $black;
+    border-bottom: 2px solid $black;
+    height: 14px;
+    width: 20px;
+    display: block;
+
+    &:before {
+        content: "";
+        width: 100%;
+        border-bottom: 2px solid $black;
+        position: absolute;
+        top: 4px;
+    }    
+}
 
 /*==================================
 Mobile Menu
 ==================================*/
 
-ul#mobile_menu {
-    
+nav.mobile_navigation ul { 
     position: relative;
     z-index: 8;
     max-height: 0px;
+    overflow: hidden;
     opacity: 0;
     list-style-type: none;
-    background: white;
-    width: 90%;
+    background: $black;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
     transition: all .5s ease-in-out;
@@ -23,21 +108,19 @@ ul#mobile_menu {
         max-height: 500px;
         opacity: 1;
         z-index: 9;
-        margin-bottom: 15px;
     }
-
 }
 
-ul#mobile_menu li {
-    border-bottom: 1px solid grey;
+nav.mobile_navigation li {
+    border-bottom: 1px solid $white;
     padding: 10px 0px;
     font-size: 14px;
 
-    a {
-        color: grey;
-
-        &:hover, &:focus {
-            color: orange;
-        }
+    &:last-child {
+        border-bottom: 0;
     }
+}
+
+nav.mobile_navigation ul li a {
+    color: $white;
 }
