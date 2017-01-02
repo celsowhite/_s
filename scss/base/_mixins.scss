@@ -46,3 +46,37 @@ OVERLAY
   height: 100%;
   display: block;
 }
+
+/*================
+CENTERED CONTENT CONTAINER
+Center content horizontally and vertically in div.
+================*/
+
+@mixin content_container($horizontal_position, $vertical_position) {
+	position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: $horizontal_position;
+    align-items: $vertical_position;
+}
+
+/*================
+SCROLLBAR
+================*/
+
+@mixin scrollbar() {
+	&::-webkit-scrollbar {
+	    width: 5px;
+	}
+	 
+	&::-webkit-scrollbar-track {
+	    background: rgba(255,255,255,.2); 
+	}
+	 
+	&::-webkit-scrollbar-thumb {
+	    background: $teal;  
+	}
+}

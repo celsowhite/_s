@@ -14,27 +14,18 @@
 
 get_header(); ?>
 
-	<main id="main post-<?php the_ID(); ?>" class="main_wrapper" role="main">
+	<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
-
-			<header class="page_header">
-				<?php the_title(); ?>
-			</header>
-
-			<div class="page_content">
+		<main class="main_wrapper">
+			
+			<div class="container">
+			
 				<?php the_content(); ?>
+
 			</div>
 
-			<?php
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
+		</main>
 
-		<?php endwhile; ?>
+	<?php endwhile; ?>
 
-	</main>
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -120,12 +120,7 @@ function _s_scripts() {
 	// Wordpress Default Jquery
 	
 	if (!is_admin()) {
-		wp_deregister_script( 'jquery' );
-		wp_deregister_script('jquery-migrate');
-    	wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), FALSE, NULL, TRUE);
-		wp_register_script('jquery-migrate', includes_url('/js/jquery/jquery-migrate.min.js'), FALSE, NULL, TRUE);
 		wp_enqueue_script('jquery');
-		wp_enqueue_script('jquery-migrate');
 	}
 
 	// Compiled SCSS File

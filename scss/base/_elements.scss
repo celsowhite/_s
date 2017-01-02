@@ -2,66 +2,59 @@
 HELPERS
 ==================================*/
 
-/*=== Colors ===*/
+// Colors
 
 .white {
   color: $white;
 }
 
-/*=== Margins ===*/
+// Margins
 
 .margin_bottom_0 {
   margin-bottom: 0px;
 }
 
-/*=== Fonts ===*/
+// Fonts
 
 .uppercase {
   text-transform: uppercase;
 }
 
 /*==================================
-COMPONENTS
+Lists
 ==================================*/
 
-/*=== Lists ===*/
-
 ul, ol {
-	margin: 0px;
-	padding: 0px;
+	margin: 0 0 20px 0;
+  padding: 0px;
+  list-style-position: inside;
 }
 
-/*=== Buttons ===*/
+/*==================================
+Buttons
+==================================*/
 
-.color_button {
-	display: inline-block;
-	font-weight: 700;
-	font-size: 18px;
-	line-height: 22px;
-	padding: 20px 50px;
-	background: $white;
-	color: $white;
+input, button, textarea {
+  border-radius: 0;
+  -webkit-appearance: none;
 }
 
-.transparent_button {
-	display: inline-block;
-	font-weight: 700;
-	font-size: 15px;
-	line-height: 20px;
-	padding: 10px 20px;
-	background: transparent;
-	border: 2px solid;
-	color: inherit;
-}
+/*==================================
+Icons
+==================================*/
 
-/*=== Social Icons ===*/
+// Social
+
+ul.social_icons {
+  margin: 0;
+}
 
 ul.social_icons li {
     display: inline-block;
     margin-right: 10px;
 }
 
-/*=== Close Icon ===*/
+// Close
 
 .close_icon {
   position: relative;
