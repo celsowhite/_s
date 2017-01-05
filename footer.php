@@ -21,7 +21,7 @@
 
 <script>
 	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', '']);
+	_gaq.push(['_setAccount', 'ga-analytics-code']);
 	_gaq.push(['_trackPageview']);
 
 	(function() {
