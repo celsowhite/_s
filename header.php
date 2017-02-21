@@ -29,7 +29,7 @@
 	<header class="main_header">
 		<div class="container">
 			<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<img src="<?php echo get_template_directory_uri() . '/img/logo/logo_dark.png'; ?>" />
+				<img src="<?php echo get_template_directory_uri() . '/img/logo/logo.png'; ?>" />
 			</a>
 			<nav class="main_navigation">
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container' => '' ) ); ?>
@@ -40,7 +40,7 @@
 	<header class="mobile_header">
 		<div class="container">
 			<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<img src="<?php echo get_template_directory_uri() . '/img/logo/logo_dark.png'; ?>" />
+				<img src="<?php echo get_template_directory_uri() . '/img/logo/logo.png'; ?>" />
 			</a>
 			<span class="menu_icon"></span>
 		</div>
