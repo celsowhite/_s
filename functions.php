@@ -137,9 +137,9 @@ function _s_scripts() {
 
 	wp_enqueue_script('_s-fitvids', get_template_directory_uri() . '/js/plugins/fitvids/fitvids.min.js', '', '', true);
 
-	// Font awesome
+	// Font Awesome
 
-	wp_enqueue_script('font-awesome', 'https://use.fontawesome.com/bfa5b116b0.js', '', '', true);
+	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/fonts/font-awesome/css/font-awesome.min.css');
 
 	// Custom Scripts
 
