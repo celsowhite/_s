@@ -141,6 +141,10 @@ function _s_scripts() {
 
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/fonts/font-awesome/css/font-awesome.min.css');
 
+	// Utility Scripts
+
+	wp_enqueue_script('utility-scripts', get_template_directory_uri() . '/js/utilities.js', '', '', true);
+
 	// Custom Scripts
 
 	wp_enqueue_script('_s-scripts', get_template_directory_uri() . '/js/scripts.min.js', '', '', true);
