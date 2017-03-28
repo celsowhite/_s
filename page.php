@@ -1,31 +1,25 @@
 <?php
-/**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package _s
- */
+/*
+Default page template
+*/
 
 get_header(); ?>
 
-	<?php while ( have_posts() ) : the_post(); ?>
+	<main class="main_wrapper">
 
-		<main class="main_wrapper">
-			
-			<div class="container">
-			
+		<?php while ( have_posts() ) : the_post(); ?>
+
+			<header class="page_header">
+				<?php the_title(); ?>
+			</header>
+
+			<div class="page_content">
 				<?php the_content(); ?>
-
 			</div>
 
-		</main>
+		<?php endwhile; ?>
 
-	<?php endwhile; ?>
+	</main>
 
 <?php get_footer(); ?>
+

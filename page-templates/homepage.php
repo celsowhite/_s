@@ -5,9 +5,17 @@ Template Name: Homepage
 
 get_header(); ?>
 
-	<?php while ( have_posts() ) : the_post(); ?>
+	<main class="main_wrapper">
 
-		<main class="main_wrapper">
+		<?php while ( have_posts() ) : the_post(); ?>
+
+			<header class="page_header">
+				<?php the_title(); ?>
+			</header>
+
+			<div class="page_content">
+				<?php the_content(); ?>
+			</div>
 
 			<?php
 
@@ -20,8 +28,8 @@ get_header(); ?>
 			?>	
 			<?php /* endwhile; endif; */?>
 
-		</main>
+		<?php endwhile; ?>
 
-	<?php endwhile; ?>
+	</main>
 
 <?php get_footer(); ?>

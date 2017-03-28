@@ -171,93 +171,6 @@ add_action( 'wp_head', 'theme_typekit_inline' );
 
 ====================================================================*/
 
-/*==========================================
-CUSTOM POST TYPES
-==========================================*/
-
-/*=== Stories ===*/
-
-function custom_post_type_stories() {
-
-	$labels = array(
-		'name'                => ('Stories'),
-		'singular_name'       => ('Stories'),
-		'menu_name'           => ('Stories'),
-		'parent_item_colon'   => (''),
-		'all_items'           => ('All Stories'),
-		'view_item'           => ('View Story'),
-		'add_new_item'        => ('Add New Story'),
-		'add_new'             => ('Add New'),
-		'edit_item'           => ('Edit Story'),
-		'update_item'         => ('Update Story'),
-		'search_items'        => ('Search Stories'),
-		'not_found'           => ('Not Found'),
-		'not_found_in_trash'  => ('Not found in Trash'),
-	);
-	
-	$args = array(
-		'label'               => ('stories'),
-		'description'         => ('Stories'),
-		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'revisions', 'page-attributes', 'custom-fields', 'excerpt'  ),
-		'hierarchical'        => false,
-		'rewrite'             => array('slug' => 'story'),
-		'taxonomies'          => array( 'story_category' ),
-		'public'              => true,
-		'show_ui'             => true,
-		'show_in_menu'        => true,
-		'show_in_nav_menus'   => true,
-		'show_in_admin_bar'   => true,
-		'menu_position'       => 5,
-		'can_export'          => true,
-		'has_archive'         => true,
-		'exclude_from_search' => false,
-		'publicly_queryable'  => true,
-		'capability_type'     => 'post',
-		'menu_icon'  		  => 'dashicons-format-chat',
-	);
-
-	register_post_type( 'stories', $args );
-
-}
-
-add_action( 'init', 'custom_post_type_stories', 0 );
-
-/*==========================================
-CUSTOM TAXONOMY 
-==========================================*/
-
-/*=== Stories Taxonomy ===*/
-
-function add_stories_taxonomy() {
-	$labels = array(
-		'name' => ('Type'),
-      	'singular_name' => ('Type'),
-      	'search_items' =>  ('Search Types' ),
-      	'all_items' => ('All Types' ),
-      	'parent_item' => ('Parent Type' ),
-      	'parent_item_colon' => ('Parent Type:' ),
-      	'edit_item' => ('Edit Type' ),
-      	'update_item' => ('Update Type' ),
-      	'add_new_item' => ('Add New Type' ),
-      	'new_item_name' => ('New Type Name' ),
-      	'menu_name' => ('Types' ),
-	);
-
-	$args = array(
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => true,
-		'show_admin_column' => true,
-		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'genre' ),
-	);
-
-	register_taxonomy( 'story_type', array( 'post' ), $args );
-}
-
-add_action( 'init', 'add_stories_taxonomy', 0 );
-
 /*=============================================
 ACF OPTIONS PAGE
 =============================================*/
@@ -329,10 +242,14 @@ add_action('init','disable_file_editting');
 INCLUDES
 ==========================================*/
 
-/*== Custom template tags for this theme. ==*/
+// Custom Post Types
+
+require get_template_directory() . '/includes/custom_post_types.php';
+
+// Custom template tags for this theme.
 
 require get_template_directory() . '/includes/template-tags.php';
 
-/*== Custom functions that act independently of the theme templates. ==*/
+// Custom functions that act independently of the theme templates.
 
 require get_template_directory() . '/includes/extras.php';
