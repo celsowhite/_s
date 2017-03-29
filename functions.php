@@ -250,6 +250,10 @@ INCLUDES
 
 require get_template_directory() . '/includes/custom_post_types.php';
 
+// Helper Functions
+
+require get_template_directory() . '/includes/helper_functions.php';
+
 // Custom template tags for this theme.
 
 require get_template_directory() . '/includes/template-tags.php';
