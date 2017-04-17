@@ -149,6 +149,15 @@ function _s_scripts() {
 
 	wp_enqueue_script('_s-scripts', get_template_directory_uri() . '/js/scripts.min.js', '', '', true);
 
+	// Localize main script for accessing Wordpress URLs in JS
+
+	$js_variables = array(
+		'site'  => get_option('siteurl'),
+		'theme' => get_template_directory_uri()
+	);
+	
+	wp_localize_script('_s-scripts', 'wpUrls', $js_variables);
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
