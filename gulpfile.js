@@ -31,7 +31,7 @@ gulp.task('js-minify', function(){
   gulp.src('./js/custom/*.js')
   .pipe(babel({presets: ['es2015']}).on('error', notify.onError("Error: <%= error.message %>")))
   .pipe(concat('scripts.js'))
-  // .pipe(uglify().on('error', notify.onError("Error: <%= error.cause %>")))
+  .pipe(uglify().on('error', notify.onError("Error: <%= error.cause %>")))
   .pipe(rename({suffix: '.min'}))
   .pipe(gulp.dest('./js'))
 
