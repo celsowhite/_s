@@ -59,16 +59,16 @@ a, a:visited, a:active, a:focus {
 
 a {
 	transition: color .2s ease-in-out;
-
-	&:hover {
-		color: $black;
-	}
 }
 
-.main_wrapper a {
+// Styled links within content areas
+
+.wysiwyg a {
     color: $black;
+	text-decoration: underline;
 
     &:hover {
-        color: $black;
+    	color: $textgrey;
+        text-decoration: none;
     }
 }

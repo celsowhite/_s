@@ -13,7 +13,7 @@ get_header(); ?>
 				<?php the_title(); ?>
 			</header>
 
-			<div class="page_content">
+			<div class="page_content wysiwyg">
 				<?php the_content(); ?>
 			</div>
 
