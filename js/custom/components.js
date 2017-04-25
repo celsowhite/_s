@@ -10,7 +10,7 @@
 		SOCIAL SHARE
 		=================================*/
 
-		/*== Facebook Share ==*/
+		// Facebook Share
 
 		$('a.fb_share').click(function(e) {
 
@@ -21,6 +21,8 @@
 			window.open('http://www.facebook.com/sharer.php?u=' + loc,'facebookwindow','height=450, width=550, top='+($(window).height()/2 - 225) +', left='+$(window).width()/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
 
 		});
+
+		// Twitter Share
 
 		$('a.twitter_share').click(function(e){
 
@@ -36,7 +38,7 @@
 
 		});
 
-		/*=== LinkedIn Share ===*/
+		// LinkedIn Share
 
 		$('a.linkedin_share').click(function(e){
 
@@ -56,11 +58,11 @@
 		FITVIDS
 		=================================*/
 
-		/*=== Wrap All Iframes with 'video_embed' for responsive videos ===*/
+		// Wrap All Iframes with 'video_embed' for responsive videos
 
 		$('iframe[src*="youtube.com"], iframe[src*="vimeo.com"]').wrap("<div class='video_embed'/>");
 
-		/*=== Target div for fitVids ===*/
+		// Target div for fitVids
 
 		$(".video_embed").fitVids();
 
