@@ -15,6 +15,7 @@ body, p {
 
 body {
 	background-color: $white;
+	color: $black;
 }
 
 h1 {
@@ -33,7 +34,6 @@ h3 {
 }
 
 p, h1, h2, h3 {
-	color: $black;
 	margin: 0px 0px 20px;
 }
 
