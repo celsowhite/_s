@@ -43,7 +43,19 @@ ul.social_icons {
 
 ul.social_icons li {
     display: inline-block;
-    margin-right: 10px;
+    margin: 0 10px;
+}
+
+ul.social_icons.flush_left li:first-child {
+  margin: 0 10px 0 0;
+}
+
+ul.social_icons.flush_right {
+  text-align: right;
+
+  li:last-child {
+    margin: 0 0 0 10px;
+  }
 }
 
 // Close
