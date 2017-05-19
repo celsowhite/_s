@@ -24,6 +24,8 @@ gulp.task('styles', function () {
 
 });
 
+/*=== Javascript Minify ===*/
+
 gulp.task('js-minify', function(){
 
   gulp.src([
