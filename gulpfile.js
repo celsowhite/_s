@@ -24,13 +24,11 @@ gulp.task('styles', function () {
 
 });
 
-/*=== Javascript Minify ===*/
-
 gulp.task('js-minify', function(){
 
   gulp.src([
-    '.js/custom/global.js',
-    '.js/custom/**/!(global)*.js', // all files that end in .js EXCEPT global*.js
+    './js/custom/global.js',
+    './js/custom/**/!(global)*.js', // all files that end in .js EXCEPT global*.js
   ])
   .pipe(babel({presets: ['es2015']}).on('error', notify.onError("Error: <%= error.message %>")))
   .pipe(concat('scripts.js'))
