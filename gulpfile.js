@@ -28,7 +28,10 @@ gulp.task('styles', function () {
 
 gulp.task('js-minify', function(){
 
-  gulp.src('./js/custom/*.js')
+  gulp.src([
+    '.js/custom/global.js',
+    '.js/custom/**/!(global)*.js', // all files that end in .js EXCEPT global*.js
+  ])
   .pipe(babel({presets: ['es2015']}).on('error', notify.onError("Error: <%= error.message %>")))
   .pipe(concat('scripts.js'))
   .pipe(uglify().on('error', notify.onError("Error: <%= error.cause %>")))
