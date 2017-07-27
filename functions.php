@@ -123,27 +123,25 @@ function _s_scripts() {
 		wp_enqueue_script('jquery');
 	}
 
-	// Compiled SCSS File
-
-	wp_enqueue_style( 'custom_styles', get_template_directory_uri() . '/css/style.min.css' );
-
-	// Flexslider Styles
-
-	wp_enqueue_style('flexslider', get_template_directory_uri() . '/css/plugins/flexslider/flexslider.min.css');
-
-	wp_enqueue_script( '_s-flexslider', get_template_directory_uri() . '/js/plugins/flexslider/jquery.flexslider-min.js', '','', true);
-
-	// FitVids
-
-	wp_enqueue_script('_s-fitvids', get_template_directory_uri() . '/js/plugins/fitvids/fitvids.min.js', '', '', true);
-
 	// Font Awesome
 
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/fonts/font-awesome/css/font-awesome.min.css');
 
+	// Plugin Styles
+
+	wp_enqueue_style( 'plugin_styles', get_template_directory_uri() . '/styles/plugin_styles.min.css' );
+
+	// Custom Styles
+
+	wp_enqueue_style( 'custom_styles', get_template_directory_uri() . '/styles/custom_styles.min.css' );
+
+	// Plugin Scripts
+
+	wp_enqueue_script('plugin_scripts', get_template_directory_uri() . '/scripts/plugin_scripts.min.js', '', '', true);
+
 	// Custom Scripts
 
-	wp_enqueue_script('_s-scripts', get_template_directory_uri() . '/js/scripts.min.js', '', '', true);
+	wp_enqueue_script('custom_scripts', get_template_directory_uri() . '/scripts/custom_scripts.min.js', '', '', true);
 
 	// Localize main script for accessing Wordpress URLs in JS
 
