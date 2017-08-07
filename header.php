@@ -19,7 +19,7 @@
 
 <!-- Favicon -->
 
-<link rel="icon" type="img/png" href="" />
+<link rel="icon" type="img/png" href="<?php echo get_template_directory_uri() . '/favicon.png'; ?>" />
 
 <?php wp_head(); ?>
 </head>
