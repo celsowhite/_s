@@ -222,7 +222,7 @@ add_filter('login_headerurl', 'my_loginURL');
 // Enqueue the login specific stylesheet for design customizations.
 
 function my_logincustomCSSfile() {
-    wp_enqueue_style('login-styles', get_template_directory_uri() . '/css/login.min.css');
+    wp_enqueue_style('login-styles', get_template_directory_uri() . '/styles/login.min.css');
 }
 add_action('login_enqueue_scripts', 'my_logincustomCSSfile');
 
@@ -256,6 +256,10 @@ require get_template_directory() . '/includes/custom_post_types.php';
 // Helper Functions
 
 require get_template_directory() . '/includes/helper_functions.php';
+
+// Clean Admin
+
+require get_template_directory() . '/includes/clean_admin.php';
 
 // Custom template tags for this theme.
 

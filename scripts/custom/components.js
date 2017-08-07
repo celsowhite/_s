@@ -2,9 +2,7 @@
 
 	$(document).ready(function() {
 
-	// Call these functions when the html has loaded.
-
-	"use strict"; // Ensure javascript is in strict mode and catches errors.
+	"use strict";
 
 		/*================================= 
 		SOCIAL SHARE
