@@ -125,7 +125,7 @@ function _s_scripts() {
 
 	// Font Awesome
 
-	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/fonts/font-awesome/css/font-awesome.min.css');
+	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/fonts/font-awesome/css/fontawesome-all.min.css');
 
 	// Plugin Styles
 
