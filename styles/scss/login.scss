@@ -1,28 +1,32 @@
 @import "base/_variables.scss";
 
-/*=== Change background color and font family ===*/
+// Change background color and font family
 
 body {
   background: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-/*=== Adjust overall form padding ===*/
+// Adjust overall form padding
 
 #login {
-  padding: 4% 0 0;
+  padding: 0;
 }
  
-/*=== Change Width and Height of Logo Image + Add Custom Image File ===*/
+// Change Width and Height of Logo Image + Add Custom Image File
 
 .login h1 a {
-  background-image: url('../img/login_logo.png');
-  width: 180px;
-  height: 170px;
-  background-size: 180px;
+  background-image: url('../img/logo/logo.png');
+  width: 100px;
+  height: 100px;
+  background-size: 100px;
   margin: 0 auto;
 }
  
-/*=== Add a few changes to the color and style of form itself ===*/
+// Add a few changes to the color and style of form itself
 
 .login form {
   margin-top: 10px;
@@ -36,19 +40,25 @@ body {
 }
  
 .login #backtoblog a, .login #nav a {
-  color: #1C79AC;
+  color: $black;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    color: $black;
+    opacity: .8;
+  }
 }
  
 .wp-core-ui .button-primary {
-  background: #1C79AC;
+  background: $black;
   border: none;
   text-shadow: none;
   box-shadow: none;
+  transition: all .3s ease-in-out;
 }
 
 .wp-core-ui .button-primary:hover {
-  background: #1C79AC;
-  opacity: .6;
+  background: $black;
 }
 
 button, input, select, textarea {
