@@ -1,6 +1,24 @@
 <?php
 
 /*================================= 
+Custom Title/Excerpt Lengths
+=================================*/
+
+// Title
+
+function tm_title_trim($title) {
+	$characters = get_field('title_character_limit', 'option');
+	return mb_strimwidth($title, 0, $characters, '...');
+}
+
+// Excerpt
+
+function tm_excerpt_trim($excerpt) {
+	$characters = get_field('excerpt_character_limit', 'option');
+	return mb_strimwidth($excerpt, 0, $characters, '...');
+}
+
+/*================================= 
 Numbered Pagination
 =================================*/
 

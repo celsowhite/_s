@@ -91,23 +91,6 @@ remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 /*==========================================
-REGISTER WIDGET AREA
-==========================================*/
-
-function _s_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', '_s' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', '_s_widgets_init' );
-
-/*==========================================
 ENQUEUE SCRIPTS AND STYLES
 ==========================================*/
 
@@ -150,11 +133,12 @@ function _s_scripts() {
 	// Localize main script for accessing Wordpress URLs in JS
 
 	$js_variables = array(
-		'site'  => get_option('siteurl'),
-		'theme' => get_template_directory_uri()
+		'site'          => get_option('siteurl'),
+		'theme'         => get_template_directory_uri(),
+		'ajax_url'      => admin_url('admin-ajax.php')
 	);
 	
-	wp_localize_script('_s-scripts', 'wpUrls', $js_variables);
+	wp_localize_script('custom_scripts', 'wpUrls', $js_variables);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -181,14 +165,6 @@ function theme_typekit_inline() {
 add_action( 'wp_head', 'theme_typekit_inline' );
 
 ====================================================================*/
-
-/*=============================================
-ACF OPTIONS PAGE
-=============================================*/
-
-if( function_exists('acf_add_options_page') ) {
-	acf_add_options_page();
-}
 
 /*==========================================
 LIMIT POST REVISIONS
@@ -231,14 +207,6 @@ function my_logincustomCSSfile() {
 add_action('login_enqueue_scripts', 'my_logincustomCSSfile');
 
 /*=============================================
-YOAST
-=============================================*/
-
-// Adjust Metabox Priority
-
-add_filter( 'wpseo_metabox_prio', function() { return 'low';});
-
-/*=============================================
 DISALLOW FILE EDIT
 Remove the ability to edit theme and plugins via the wp-admin.
 =============================================*/
@@ -250,25 +218,41 @@ function disable_file_editting() {
 add_action('init','disable_file_editting');
 
 /*==========================================
-INCLUDES
+DASHBOARD
 ==========================================*/
 
 // Custom Post Types
 
-require get_template_directory() . '/includes/custom_post_types.php';
+require get_template_directory() . '/includes/dashboard/custom_post_types.php';
 
-// Helper Functions
+// Widgets & Sidebars
 
-require get_template_directory() . '/includes/helper_functions.php';
+require get_template_directory() . '/includes/dashboard/register_widgets_sidebars.php';
 
 // Clean Admin
 
-require get_template_directory() . '/includes/clean_admin.php';
+require get_template_directory() . '/includes/dashboard/clean_admin.php';
+
+/*==========================================
+HELPERS
+==========================================*/
+
+// Helper Functions
+
+require get_template_directory() . '/includes/helpers/helper_functions.php';
 
 // Custom template tags for this theme.
 
-require get_template_directory() . '/includes/template-tags.php';
+require get_template_directory() . '/includes/helpers/template-tags.php';
 
-// Custom functions that act independently of the theme templates.
+/*==========================================
+PLUGIN CUSTOMIZATION
+==========================================*/
 
-require get_template_directory() . '/includes/extras.php';
+// Yoast
+
+require get_template_directory() . '/includes/plugin_customization/yoast.php';
+
+// ACF
+
+require get_template_directory() . '/includes/plugin_customization/acf.php';
