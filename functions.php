@@ -135,6 +135,10 @@ function _s_scripts() {
 
 	wp_enqueue_style( 'custom_styles', get_template_directory_uri() . '/styles/custom_styles.min.css' );
 
+	// Polyfills
+
+	wp_enqueue_script('polyfill_io', 'https://cdn.polyfill.io/v2/polyfill.js?features=default,fetch,Array.prototype.find,Array.prototype.findIndex,Array.prototype.includes,Object.entries,Element.prototype.closest', '', '', true);
+
 	// Plugin Scripts
 
 	wp_enqueue_script('plugin_scripts', get_template_directory_uri() . '/scripts/plugin_scripts.min.js', '', '', true);
