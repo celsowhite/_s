@@ -33,6 +33,26 @@ MEDIA QUERIES
 }
 
 /*================
+Z-Index
+================*/
+
+$z-index: (
+  modal              : 40,
+  overlay            : 30,
+  navigation         : 20,
+  priority-content   : 10,
+  hidden             : -10
+);
+
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}
+
+@mixin z-index($key) {
+  z-index: z-index($key);
+}
+
+/*================
 OVERLAY
 ================*/
 
