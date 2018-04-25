@@ -6,16 +6,28 @@ Custom Title/Excerpt Lengths
 
 // Title
 
-function tm_title_trim($title) {
+function title_trim($title) {
 	$characters = get_field('title_character_limit', 'option');
 	return mb_strimwidth($title, 0, $characters, '...');
 }
 
 // Excerpt
 
-function tm_excerpt_trim($excerpt) {
+function excerpt_trim($excerpt) {
 	$characters = get_field('excerpt_character_limit', 'option');
 	return mb_strimwidth($excerpt, 0, $characters, '...');
+}
+
+/*================================= 
+Image ID to URL
+=================================*/
+
+// Function to take an image ID parameter and pull the url for a specific size of the image.
+
+function image_id_to_url($imageID, $imageSize) {
+	$image = wp_get_attachment_image_src($imageID, $imageSize);
+	$image_url = $image[0];
+	return $image_url;
 }
 
 /*================================= 
