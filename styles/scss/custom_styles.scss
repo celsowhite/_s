@@ -5,11 +5,12 @@
 @import "base/_mixins.scss";
 @import "base/_fonts.scss";
 @import "base/_structure.scss";
-@import "base/_elements.scss";
 @import "base/_helpers.scss";
 
 // Components 
 
+@import "components/_atoms.scss";
+@import "components/_organisms.scss";
 @import "components/_header.scss";
 @import "components/_footer.scss";
 
