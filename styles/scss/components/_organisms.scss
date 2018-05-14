@@ -1,3 +1,87 @@
 /*==================================
 Organisms
 ==================================*/
+
+/*==================================
+FAQ's
+==================================*/
+
+.faq_container {
+    margin-bottom: 20px;
+}
+
+.faq {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid $black;
+    padding: 20px 40px 20px 0;
+    cursor: pointer;
+
+    &:first-child{
+        padding: 0 40px 20px 0;
+    }
+
+}
+
+// Title
+
+h5.faq_title {
+    color: $black;
+    margin-bottom: 0;
+    transition: all .3s ease-in-out;
+}
+
+// Content
+
+.faq_content {
+    opacity: 0;
+    max-height: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+
+// Arrow After
+
+.faq:after {
+    content: '\f107';
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 400;
+    color: $black;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -13px;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    transition: all .3s ease-in-out;
+}
+
+.faq:first-of-type:after {
+    top: 0;
+    margin-top: 0;
+}
+
+// Open State
+
+.faq.open {
+    .faq_title {
+        margin-bottom: 10px;
+    }
+    .faq_content {
+        opacity: 1;
+        max-height: 500px;
+    }
+    &:after {
+        transform: rotate(-180deg);
+    }
+}
+
+// Hide empty paragraphs after shortcode output
+
+.faq + p:empty {
+    display: none;
+}

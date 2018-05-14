@@ -148,24 +148,6 @@ function _s_scripts() {
 
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
-/*====================================================================
-
-Enqueue Typekit if Neccesary
-
-function theme_typekit() {
-    wp_enqueue_script( 'theme_typekit', '//use.typekit.net/mjs0clp.js');
-}
-add_action( 'wp_enqueue_scripts', 'theme_typekit' );
-
-function theme_typekit_inline() {
-  if ( wp_script_is( 'theme_typekit', 'done' ) ) { ?>
-  	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<?php }
-}
-add_action( 'wp_head', 'theme_typekit_inline' );
-
-====================================================================*/
-
 /*==========================================
 LIMIT POST REVISIONS
 ==========================================*/
@@ -256,3 +238,11 @@ require get_template_directory() . '/includes/plugin_customization/yoast.php';
 // ACF
 
 require get_template_directory() . '/includes/plugin_customization/acf.php';
+
+/*==========================================
+SHORTCODES
+==========================================*/
+
+// Custom Shortcodes
+
+require get_template_directory() . '/includes/shortcodes/custom_shortcodes.php';
