@@ -31,6 +31,36 @@ function image_id_to_url($imageID, $imageSize) {
 }
 
 /*================================= 
+Page Link by Slug
+=================================*/
+
+function page_link_by_slug($slug) {
+	// Get the post object of this page
+    $page_object = get_page_by_path($slug);
+ 
+	// Get the URL of this page
+	
+	$page_link = get_page_link( $page_object );
+	return $page_link;
+}
+
+
+/*================================= 
+Category Link by Slug
+=================================*/
+
+function category_link_by_slug($slug) {
+	// Get the ID of a given category
+    $category_object = get_category_by_slug($slug );
+ 
+	// Get the URL of this category
+	
+	$category_link = get_category_link( $category_object );
+	return $category_link;
+	
+}
+
+/*================================= 
 Numbered Pagination
 =================================*/
 
@@ -63,12 +93,17 @@ Category List
 // Create a comma separated list of terms from a specific category
 // First variable is the post ID and the second is the registered taxonomy name.
 
-function category_terms_list($postID, $category) {
+function category_terms_list($postID, $category, $includeLink = true) {
 	$post_terms = get_the_terms($postID, $category);
 	$post_terms_list_array = array();
 	if($post_terms && ! is_wp_error($post_terms)):
 		foreach($post_terms as $term) {
-			$post_terms_list_array[] = '<a href="' . get_term_link($term->term_id) . '">' . $term->name . '</a>'; 
+			if($includeLink) {
+				$post_terms_list_array[] = '<a href="' . get_term_link($term->term_id) . '">' . $term->name . '</a>';
+			}
+			else {
+				$post_terms_list_array[] = $term->name;
+			}
 		}
 		return implode(', ', $post_terms_list_array);
 	endif;
