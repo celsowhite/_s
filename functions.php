@@ -112,11 +112,11 @@ function _s_scripts() {
 
 	// Plugin Styles
 
-	wp_enqueue_style( 'plugin_styles', get_template_directory_uri() . '/styles/plugin_styles.min.css' );
+	wp_enqueue_style( 'plugin_styles', get_template_directory_uri() . '/styles/plugin_styles.min.css?v=1.0.0' );
 
 	// Custom Styles
 
-	wp_enqueue_style( 'custom_styles', get_template_directory_uri() . '/styles/custom_styles.min.css' );
+	wp_enqueue_style( 'custom_styles', get_template_directory_uri() . '/styles/custom_styles.min.css?v=1.0.0' );
 
 	// Polyfills
 
@@ -124,11 +124,11 @@ function _s_scripts() {
 
 	// Plugin Scripts
 
-	wp_enqueue_script('plugin_scripts', get_template_directory_uri() . '/scripts/plugin_scripts.min.js', '', '', true);
+	wp_enqueue_script('plugin_scripts', get_template_directory_uri() . '/scripts/plugin_scripts.min.js?v=1.0.0', '', '', true);
 
 	// Custom Scripts
 
-	wp_enqueue_script('custom_scripts', get_template_directory_uri() . '/scripts/custom_scripts.min.js', '', '', true);
+	wp_enqueue_script('custom_scripts', get_template_directory_uri() . '/scripts/custom_scripts.min.js?v=1.0.0', '', '', true);
 
 	// Localize main script for accessing Wordpress URLs in JS
 
