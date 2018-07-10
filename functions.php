@@ -246,3 +246,11 @@ SHORTCODES
 // Custom Shortcodes
 
 require get_template_directory() . '/includes/shortcodes/custom_shortcodes.php';
+
+/*==========================================
+FEATURES
+==========================================*/
+
+// oEmbed
+
+require get_template_directory() . '/includes/features/oEmbed.php';
