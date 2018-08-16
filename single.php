@@ -16,7 +16,7 @@ get_header(); ?>
 			<div class="page_content wysiwyg">
 				<?php the_content(); ?>
 			</div>
-
+			
 		<?php endwhile; ?>
 
 	</main>

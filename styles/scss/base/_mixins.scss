@@ -53,6 +53,19 @@ $z-index: (
 }
 
 /*================
+STAGGERED TRANSITION
+================*/
+
+@mixin staggered_transition($start:1, $items:2, $initial:0, $step:.1){
+	@for $i from $start through $items{
+		&:nth-of-type(#{abs($i)}){
+			transition-delay:#{$initial}s;
+		}
+		$initial: $initial + $step;
+	}
+}
+
+/*================
 OVERLAY
 ================*/
 
