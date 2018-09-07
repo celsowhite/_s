@@ -4,6 +4,7 @@ Wordpress Starter Theme
 Modern Wordpress theme setup. Includes webpack setup and some handy default plugins.
 - Modular js, ES6+ syntax usage and a single minfied bundle for all js and plugins. 
 - Modular scss. Including postcss processing (autoprefixing, imports, minification and optimization.)
+- Auto hashing of webpack bundled assets to enable cache busting in production.
 - Includes Font Awesome, Flexslider, FitVids and Plyr. These are plugins I use often in projects. Easily choose to include/exclude them through the script files.
 
 ## Requirements
@@ -37,5 +38,5 @@ To create an optimized production build, run:
 npm build
 ```
 ## Future Features
-- Add hashes to production assets in the dist folder
+
 - Hot Module Reloading

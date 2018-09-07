@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var WebpackNotifierPlugin = require('webpack-notifier');
+var AssetsPlugin = require('assets-webpack-plugin');
 
 module.exports = (env, argv) => {
 
@@ -19,7 +20,7 @@ module.exports = (env, argv) => {
       login: './src/login.js'
     },
     output: {
-      filename: '[name].min.js',
+      filename: devMode ? '[name].min.js' : '[name].[hash].min.js',
       path: path.resolve(__dirname, 'dist')
     },
     module: {
@@ -61,16 +62,21 @@ module.exports = (env, argv) => {
     },
     plugins: [
       // Extracts css into separate files. Creates a CSS file per JS file that contains CSS.
+      // Hashing production output to be able to cache bust in production.
       new MiniCssExtractPlugin({
-        filename: '[name].min.css',
-        chunkFilename: '[id].css'
+        filename: devMode ? '[name].min.css' : '[name].[hash].min.css',
+        chunkFilename: devMode ? '[id].min.css' : '[id].[hash].min.css'
       }),
       // Automatically loaded and universally accessible modules.
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery'
       }),
-      new WebpackNotifierPlugin()
+      // Mac notifications for js or scss errors. In case terminal isn't visible and need to know if something is wrong.
+      new WebpackNotifierPlugin(),
+      new AssetsPlugin({
+        path: path.resolve(__dirname, 'dist')
+      })
     ],
     // Webpack console stats info.
     stats: {

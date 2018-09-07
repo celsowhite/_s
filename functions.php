@@ -95,6 +95,12 @@ ENQUEUE SCRIPTS AND STYLES
 ==========================================*/
 
 function _s_scripts() {
+
+	// Pull Asset filenames from Webpack
+	// In production these are hashed for cache busting
+
+	$webpack_assets = json_decode(file_get_contents('dist/webpack-assets.json', true));
+	$main_assets = $webpack_assets->main;
 	
 	// Default theme style
 
@@ -106,7 +112,7 @@ function _s_scripts() {
 
 	// Styles
 
-	wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/dist/main.min.css' );
+	wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/dist/' . $main_assets->css, '', null);
 
 	// Polyfills
 
@@ -114,7 +120,7 @@ function _s_scripts() {
 
 	// Scripts
 
-	wp_enqueue_script('main_script', get_template_directory_uri() . '/dist/main.min.js', '', '', true);
+	wp_enqueue_script('main_script', get_template_directory_uri() . '/dist/' . $main_assets->js, '', null, true);
 
 	// Localize main script for accessing Wordpress URLs in JS
 
