@@ -13,10 +13,22 @@ GENERAL STRUCTURE
 }
 
 /*==================================
+Panels
+==================================*/
+
+.panel {
+    padding: 40px 0;
+}
+
+.panel_padding_bottom {
+    padding: 0 0 40px;
+}
+
+/*==================================
 GRID
 ==================================*/
 
-.x_row {
+.row {
     display: flex;
     flex-flow: row wrap;
     width: auto;
@@ -27,8 +39,6 @@ GRID
 	position: relative;
 	margin: 0px 0px 15px;
 	padding: 0px 7.5px;
-	float: left;
-	display: inline-block;
 
 	img {
 		display: block;

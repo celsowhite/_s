@@ -100,35 +100,21 @@ function _s_scripts() {
 
 	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
 
-	// Wordpress Default Jquery
-	
-	if (!is_admin()) {
-		wp_enqueue_script('jquery');
-	}
-
 	// Font Awesome
 
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/fonts/font-awesome/css/fontawesome-all.min.css');
 
-	// Plugin Styles
+	// Styles
 
-	wp_enqueue_style( 'plugin_styles', get_template_directory_uri() . '/styles/plugin_styles.min.css?v=1.0.0' );
-
-	// Custom Styles
-
-	wp_enqueue_style( 'custom_styles', get_template_directory_uri() . '/styles/custom_styles.min.css?v=1.0.0' );
+	wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/dist/main.min.css' );
 
 	// Polyfills
 
 	wp_enqueue_script('polyfill_io', 'https://cdn.polyfill.io/v2/polyfill.js?features=default,fetch,Array.prototype.find,Array.prototype.findIndex,Array.prototype.includes,Object.entries,Element.prototype.closest', '', '', true);
 
-	// Plugin Scripts
+	// Scripts
 
-	wp_enqueue_script('plugin_scripts', get_template_directory_uri() . '/scripts/plugin_scripts.min.js?v=1.0.0', '', '', true);
-
-	// Custom Scripts
-
-	wp_enqueue_script('custom_scripts', get_template_directory_uri() . '/scripts/custom_scripts.min.js?v=1.0.0', '', '', true);
+	wp_enqueue_script('main_script', get_template_directory_uri() . '/dist/main.min.js', '', '', true);
 
 	// Localize main script for accessing Wordpress URLs in JS
 
@@ -138,7 +124,7 @@ function _s_scripts() {
 		'ajax_url'      => admin_url('admin-ajax.php')
 	);
 	
-	wp_localize_script('custom_scripts', 'wpUrls', $js_variables);
+	wp_localize_script('main_script', 'wpUrls', $js_variables);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -184,7 +170,7 @@ add_filter('login_headerurl', 'my_loginURL');
 // Enqueue the login specific stylesheet for design customizations.
 
 function my_logincustomCSSfile() {
-    wp_enqueue_style('login-styles', get_template_directory_uri() . '/styles/login.min.css');
+    wp_enqueue_style('login-styles', get_template_directory_uri() . '/dist/login.min.css');
 }
 add_action('login_enqueue_scripts', 'my_logincustomCSSfile');
 

@@ -1,26 +1,41 @@
-Developer Note
+Wordpress Starter Theme
 ===
 
-Wordpress theme for [project name]. Uses Gulp as a build tool. Gulp parses the scss file, autoprefixes, renames and minifies the style.scss, login.scss and scripts.js files.
+Modern Wordpress theme setup. Includes webpack setup and some handy default plugins.
+- Modular js, ES6+ syntax usage and a single minfied bundle for all js and plugins. 
+- Modular scss. Including postcss processing (autoprefixing, imports, minification and optimization.)
+- Includes Font Awesome, Flexslider, FitVids and Plyr. These are plugins I use often in projects. Easily choose to include/exclude them through the script files.
 
-Within the theme is fontawesome, flexslider, fitVids and some other useful scripts and plugins I typically use on projects.
+## Requirements
 
-This will keep evolving!
+- Node.js
+- NPM
+- PHP
 
-Installation (for when the site has been deployed)
-===
+## Getting Started
 
-- Download the newest version of Wordpress.
-- Download the database from the live server. 
-- Upload the database to your local phpMyAdmin. Do a search and replace on the database to update the URL's.
-- Setup the wp-config file with your db credentials.
-- Download or clone this repository into wp-content/themes.
-- Do a manual download of the wp-content/plugins and wp-content/uploads from the live server. Upload the files locally.
-- Activate the theme.
-- If you plan to use Gulp as your build tool, make sure node, sass and gulp are installed on your local machine.
-- Run npm install.
-- Run gulp.
-- Start making adjustments.
+This package is meant to go in the wp-content/themes folder. Follow the below commands or use my [wp-bash-scripts](https://github.com/celsowhite/wp-bash-scripts) package to automatically scafold a full local WP Install with this theme included.
 
+```bash
+git clone https://github.com/celsowhite/wp-starter.git
+npm install
+```
 
+## Developing Locally
+To work on the theme locally run:
 
+```bash
+npm run dev
+```
+
+This will auto watch all files within the src folder and compile them to the dist folder. Your Wordpress site will load files from the dist folder so just refresh the page when you want to see a change. This does not create a port to view the site. Rather just use your standard port/url setup (MAMP, Vagrant, etc.)
+
+## Building for Production
+To create an optimized production build, run:
+
+```bash
+npm build
+```
+## Future Features
+- Add hashes to production assets in the dist folder
+- Hot Module Reloading

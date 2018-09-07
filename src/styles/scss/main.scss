@@ -1,3 +1,8 @@
+// Plugins
+
+@import "flexslider/flexslider.css";
+@import "plyr/src/sass/plyr.scss";
+
 // Base
 
 @import "base/_normalize.scss";
@@ -13,6 +18,7 @@
 @import "components/_organisms.scss";
 @import "components/_header.scss";
 @import "components/_footer.scss";
+@import "components/_sliders.scss";
 
 // Pages
 
