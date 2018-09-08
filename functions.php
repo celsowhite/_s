@@ -1,12 +1,4 @@
 <?php
-/**
- * _s functions and definitions.
- *
- * @link https://codex.wordpress.org/Functions_File_Explained
- *
- * @package _s
- */
-
 if ( ! function_exists( '_s_setup' ) ) :
 
 /*=========================
@@ -73,23 +65,6 @@ endif;
 
 add_action( 'after_setup_theme', '_s_setup' );
 
- // Set the content width in pixels, based on the theme's design and stylesheet.
-
-function _s_content_width() {
-	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
-}
-add_action( 'after_setup_theme', '_s_content_width', 0 );
-
-/*==========================================
-REMOVE WP EMOJI
-==========================================*/
-
-remove_action('wp_head', 'print_emoji_detection_script', 7);
-remove_action('wp_print_styles', 'print_emoji_styles');
-
-remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-remove_action( 'admin_print_styles', 'print_emoji_styles' );
-
 /*==========================================
 ENQUEUE SCRIPTS AND STYLES
 ==========================================*/
@@ -139,57 +114,6 @@ function _s_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
-
-/*==========================================
-LIMIT POST REVISIONS
-==========================================*/
-
-function limit_post_revisions( $num, $post ) {
-    $num = 3;
-    return $num;
-}
-
-add_filter( 'wp_revisions_to_keep', 'limit_post_revisions', 10, 2 );
-
-/*=============================================
-PAGE EXCERPTS
-=============================================*/
-
-function add_excerpts_to_pages() {
-     add_post_type_support( 'page', 'excerpt' );
-}
-
-add_action( 'init', 'add_excerpts_to_pages' );
-
-/*=============================================
-CUSTOM LOGIN SCREEN
-=============================================*/
-
-// Change the login logo URL
-
-function my_loginURL() {
-    return esc_url( home_url( '/' ) );
-}
-
-add_filter('login_headerurl', 'my_loginURL');
-
-// Enqueue the login specific stylesheet for design customizations.
-
-function my_logincustomCSSfile() {
-    wp_enqueue_style('login-styles', get_template_directory_uri() . '/dist/login.min.css');
-}
-add_action('login_enqueue_scripts', 'my_logincustomCSSfile');
-
-/*=============================================
-DISALLOW FILE EDIT
-Remove the ability to edit theme and plugins via the wp-admin.
-=============================================*/
-
-function disable_file_editting() {
-  define('DISALLOW_FILE_EDIT', TRUE);
-}
-
-add_action('init','disable_file_editting');
 
 /*==========================================
 DASHBOARD

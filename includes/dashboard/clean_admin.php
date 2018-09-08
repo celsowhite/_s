@@ -1,28 +1,69 @@
 <?php
 
-/*---------------------
-Dashboard Menu Adjustments
----------------------*/
+/*==========================================
+REMOVE WP EMOJI
+==========================================*/
 
-// Only hide specific dashboard menu items on the live server.
-// Show on localhost.
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
 
-$whitelist = array('127.0.0.1','::1');
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
-if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
-    add_action( 'admin_menu', 'my_remove_menu_pages', 999 );
+/*=============================================
+PAGE EXCERPTS
+=============================================*/
 
-	function my_remove_menu_pages() {
-		remove_menu_page( 'wpseo_dashboard');
-		// Enable if no comments on site remove_menu_page( 'edit-comments.php' );          
-		remove_menu_page( 'tools.php' );               
-		remove_menu_page( 'wpcf7' );
-	};
+function add_excerpts_to_pages() {
+	add_post_type_support( 'page', 'excerpt' );
 }
 
-/*---------------------
+add_action( 'init', 'add_excerpts_to_pages' );
+
+/*==========================================
+LIMIT POST REVISIONS
+==========================================*/
+
+function limit_post_revisions( $num, $post ) {
+    $num = 3;
+    return $num;
+}
+
+add_filter( 'wp_revisions_to_keep', 'limit_post_revisions', 10, 2 );
+
+/*=============================================
+CUSTOM LOGIN SCREEN
+=============================================*/
+
+// Change the login logo URL
+
+function my_loginURL() {
+    return esc_url( home_url( '/' ) );
+}
+
+add_filter('login_headerurl', 'my_loginURL');
+
+// Enqueue the login specific stylesheet for design customizations.
+
+function my_logincustomCSSfile() {
+    wp_enqueue_style('login-styles', get_template_directory_uri() . '/dist/login.min.css');
+}
+add_action('login_enqueue_scripts', 'my_logincustomCSSfile');
+
+/*=============================================
+DISALLOW FILE EDIT
+Remove the ability to edit theme and plugins via the wp-admin.
+=============================================*/
+
+function disable_file_editting() {
+  define('DISALLOW_FILE_EDIT', TRUE);
+}
+
+add_action('init','disable_file_editting');
+
+/*=======================
 Dashboard Main Screen Adjustments
----------------------*/
+=======================*/
 
 // Add new dashboard widget
 
