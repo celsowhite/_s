@@ -1,8 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-var WebpackNotifierPlugin = require('webpack-notifier');
-var AssetsPlugin = require('assets-webpack-plugin');
+const WebpackNotifierPlugin = require('webpack-notifier');
+const AssetsPlugin = require('assets-webpack-plugin');
 
 module.exports = (env, argv) => {
 
@@ -13,12 +13,13 @@ module.exports = (env, argv) => {
   // Webpack Config
 
   return {
-    // Index is the main entry point. Contains the full site styles and scripts.
-    // Login is the entry point for the wp-login screen. Contains styles specific for the login page.
+    // Main contains the full site styles and scripts.
+    // Login contains styles specific for the login page.
     entry: {
-      main: './src/index.js',
+      main: './src/main.js',
       login: './src/login.js'
     },
+    // Output built assets to the dist folder. Use a hash during production.
     output: {
       filename: devMode ? '[name].min.js' : '[name].[hash].min.js',
       path: path.resolve(__dirname, 'dist')
@@ -48,14 +49,17 @@ module.exports = (env, argv) => {
           use: [
             // Extract css plugin which creates a css file per JS file that contains CSS.
             { loader: MiniCssExtractPlugin.loader },
+            // Translate CSS into CommonJS
             {
-              loader: 'css-loader', // Translate CSS into CommonJS
+              loader: 'css-loader',
               options: {
                 url: false // No url processing because all references in css files should be to the root directory. URL processing gets complicated due to MAMP and subfolder setup.
               }
-            }, 
-            { loader: 'postcss-loader' }, // Process CSS with Post CSS (Autoprefixing, Minifying, etc). Config for this is found in postcss.config.js
-            { loader: 'sass-loader' } // Compiles Sass to CSS, using Node Sass by default
+            },
+            // Process CSS with Post CSS (Autoprefixing, Minifying, etc). Config for this is found in postcss.config.js 
+            { loader: 'postcss-loader' },
+            // Compiles Sass to CSS, using Node Sass by default
+            { loader: 'sass-loader' }
           ],
         }
       ]

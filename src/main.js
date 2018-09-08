@@ -4,8 +4,8 @@ import './styles/scss/main.scss';
 
 // Components
 
-import './scripts/components/header.js';
-import './scripts/components/faq.js';
-import './scripts/components/social_share.js';
+import './scripts/components/header';
+import './scripts/components/faq';
+import './scripts/components/social_share';
 import './scripts/components/sliders';
 import './scripts/components/video_players';
