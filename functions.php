@@ -1,119 +1,16 @@
 <?php
-if ( ! function_exists( '_s_setup' ) ) :
-
-/*=========================
-Sets up theme defaults and registers support for various WordPress features.
- 
-Note that this function is hooked into the after_setup_theme hook, which
-runs before the init hook. The init hook is too late for some features, such
-as indicating support for post thumbnails.
-========================*/
-
-function _s_setup() {
-
-	// Add default posts and comments RSS feed links to head.
-
-	add_theme_support( 'automatic-feed-links' );
-
-	/*==========================================
-	LET WORDPRESS MANAGE THE DOCUMENT TITLE
-	==========================================*/
-
-	add_theme_support( 'title-tag' );
-
-	/*==========================================
-	ENABLE SUPPORT FOR POST THUMBNAILS ON POSTS AND PAGES
-	==========================================*/
-
-	add_theme_support( 'post-thumbnails' );
-
-	/*==========================================
-	SETUP NAVIGATION MENUS
-	==========================================*/
-
-	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', '_s' ),
-	) );
-
-	/*==========================================
-	Switch default core markup for search form, comment form, and comments
-	to output valid HTML5.
-	==========================================*/
-
-	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
-
-	/*==========================================
-	ENABLE SUPPORT FOR POST FORMATS
-	==========================================*/
-
-	add_theme_support( 'post-formats', array(
-		'aside',
-		'image',
-		'video',
-		'quote',
-		'link',
-	) );
-
-}
-endif;
-
-add_action( 'after_setup_theme', '_s_setup' );
 
 /*==========================================
-ENQUEUE SCRIPTS AND STYLES
+THEME
 ==========================================*/
 
-function _s_scripts() {
+// Pre Init - Functions that need to run before init to setup admin customizations
 
-	// Pull Asset filenames from Webpack
-	// In production these are hashed for cache busting
+require get_template_directory() . '/includes/theme/pre_init.php';
 
-	$webpack_assets = json_decode(file_get_contents('dist/webpack-assets.json', true));
-	$main_assets = $webpack_assets->main;
-	
-	// Default theme style
+// Enqueue - Load styles and scripts
 
-	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
-
-	// Font Awesome
-
-	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/fonts/font-awesome/css/fontawesome-all.min.css');
-
-	// Styles
-
-	wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/dist/' . $main_assets->css, '', null);
-
-	// Polyfills
-
-	wp_enqueue_script('polyfill_io', 'https://cdn.polyfill.io/v2/polyfill.js?features=default,fetch,Array.prototype.find,Array.prototype.findIndex,Array.prototype.includes,Object.entries,Element.prototype.closest', '', '', true);
-
-	// Scripts
-
-	wp_enqueue_script('main_script', get_template_directory_uri() . '/dist/' . $main_assets->js, '', null, true);
-
-	// Localize main script for accessing Wordpress URLs in JS
-
-	$js_variables = array(
-		'site'          => get_option('siteurl'),
-		'theme'         => get_template_directory_uri(),
-		'ajax_url'      => admin_url('admin-ajax.php')
-	);
-	
-	wp_localize_script('main_script', 'wpUrls', $js_variables);
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-
-}
-
-add_action( 'wp_enqueue_scripts', '_s_scripts' );
+require get_template_directory() . '/includes/theme/enqueue.php';
 
 /*==========================================
 DASHBOARD
