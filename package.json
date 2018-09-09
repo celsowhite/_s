@@ -11,7 +11,7 @@
   "private": true,
   "scripts": {
     "dev": "webpack --mode=development --hide-modules --watch",
-    "build": "webpack --mode=production --progress"
+    "build": "rm -r dist/* && webpack --mode=production --progress"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
