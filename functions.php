@@ -32,6 +32,10 @@ require get_template_directory() . '/includes/dashboard/clean_admin.php';
 HELPERS
 ==========================================*/
 
+// WP Queries
+
+require get_template_directory() . '/includes/helpers/wp_queries.php';
+
 // Helper Functions
 
 require get_template_directory() . '/includes/helpers/helper_functions.php';

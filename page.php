@@ -40,6 +40,13 @@ get_header(); ?>
 							</ul>
 						</div>
 					</div>
+					<div class="panel">
+						<?php
+						$all_posts_query = get_all_posts();
+						while($all_posts_query->have_posts()): $all_posts_query->the_post(); ?>
+							<h2><?php the_title(); ?></h2>
+						<?php endwhile; wp_reset_postdata(); ?>
+					</div>
 				</div>
 			</div>
 
