@@ -16,10 +16,6 @@ function _s_scripts() {
 
 	wp_enqueue_style( 'theme_style', get_stylesheet_uri() );
 
-	// Font Awesome
-
-	wp_enqueue_style('font_awesome', get_template_directory_uri() . '/fonts/font-awesome/css/fontawesome-all.min.css');
-
 	// Styles
 
 	wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/dist/' . $main_assets->css, '', null);
