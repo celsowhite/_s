@@ -1,0 +1,77 @@
+/*-------------------------------
+Structure
+-------------------------------*/
+
+.form_container {
+    margin-bottom: 30px;
+}
+
+.form__group {
+    margin-bottom: 20px;
+}
+
+/*-------------------------------
+Buttons
+-------------------------------*/
+
+input, button, textarea {
+  border-radius: 0;
+}
+
+/*-------------------------------
+Helpers
+-------------------------------*/
+
+// Hide
+
+.form__input--is-hidden {
+    display: none;
+}
+
+/*-------------------------------
+Custom Select
+Uses custom font awesome down arrow as a psuedo element.
+-------------------------------*/
+
+.form__select {
+    position: relative;
+    width: 100%;
+}
+
+.form__select::after {
+    content: "\f107";
+    font-family: 'Font Awesome 5 Pro';
+    pointer-events: none;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -10px;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.form__select select {
+    appearance: none;
+    cursor: pointer;
+}
+
+/*-------------------------------
+Radios
+-------------------------------*/
+
+// Structure
+
+.form__radio-group {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+// Individual Radio
+
+.form__radio {
+    margin-right: 15px;
+}
+
+.form__radio-input {
+    margin-right: 5px;
+}

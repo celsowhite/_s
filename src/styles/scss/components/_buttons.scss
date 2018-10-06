@@ -1,0 +1,56 @@
+/*==================================
+Buttons
+==================================*/
+
+.btn {
+    position: relative;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 23px;
+    display: inline-block;
+    text-align: center;
+    transition: all .3s ease-in-out;
+
+    @include mobile_landscape {
+        font-size: 18px;
+        line-height: 23px;
+    }
+}
+
+// Primary
+
+.btn--primary {
+    background: $black;
+    color: $white;
+    border: 0;
+
+    &:hover {
+        background: $grey;
+    }
+}
+
+// Secondary
+
+.btn--secondary {
+    background: $grey;
+    color: $black;
+
+    &:hover {
+        background: $black;
+        color: $grey;
+    }
+}
+
+// Disabled {
+
+.btn--disabled {
+    background: $grey;
+    color: $white;
+}
+
+// Full Width
+
+.btn--full-width {
+    display: block;
+    width: 100%;
+}

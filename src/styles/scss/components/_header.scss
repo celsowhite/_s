@@ -1,8 +1,8 @@
-/*==================================
+/*-------------------------------
 Main Header
-==================================*/
+-------------------------------*/
 
-header.main_header .container {
+header.main-header .container {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -15,24 +15,24 @@ header.main_header .container {
 
 // Logo
 
-a.logo {
+.main-header__logo {
     display: block;
     width: 200px;
 }
 
-a.logo img {
+.main-header__logo img {
     display: block;
 }
 
-/*==================================
+/*-------------------------------
 Main Navigation
-==================================*/
+-------------------------------*/
 
-nav.main_navigation ul {
+nav.main-navigation ul {
     margin: 0;
 }
 
-nav.main_navigation li {
+nav.main-navigation li {
     display: inline-block;
     margin: 0 10px;
     text-transform: uppercase;
@@ -47,15 +47,17 @@ nav.main_navigation li {
 
 // Active menu item / Hover
 
-nav.main_navigation li.current-menu-item a, nav.main_navigation li a:hover {
+nav.main-navigation li.current-menu-item a, nav.main_navigation li a:hover {
     color: $black;
 }
 
-/*==================================
+/*-------------------------------
 Mobile Header
-==================================*/
+-------------------------------*/
 
-header.mobile_header {
+// Structure
+
+header.mobile-header {
     display: none;
     padding: 10px 0;
 
@@ -64,34 +66,28 @@ header.mobile_header {
     }
 }
 
-header.mobile_header .container {
+header.mobile-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.menu_icon {
-    position: relative;
-    border-top: 2px solid $black;
-    border-bottom: 2px solid $black;
-    height: 14px;
-    width: 20px;
-    display: block;
+// Logo
 
-    &:before {
-        content: "";
-        width: 100%;
-        border-bottom: 2px solid $black;
-        position: absolute;
-        top: 4px;
-    }    
+.mobile-header__logo {
+    display: block;
+    width: 100px;
 }
 
-/*==================================
-Mobile Menu
-==================================*/
+.mobile-header__logo img {
+    display: block;
+}
 
-nav.mobile_navigation ul { 
+/*-------------------------------
+Mobile Menu
+-------------------------------*/
+
+nav.mobile-navigation ul { 
     position: relative;
     z-index: 8;
     max-height: 0px;
@@ -103,15 +99,15 @@ nav.mobile_navigation ul {
     margin: 0 auto;
     text-align: center;
     transition: all .5s ease-in-out;
-
-    &.open {
-        max-height: 500px;
-        opacity: 1;
-        z-index: 9;
-    }
 }
 
-nav.mobile_navigation li {
+nav.mobile-navigation--is-open ul {
+    max-height: 500px;
+    opacity: 1;
+    z-index: 9;
+}
+
+nav.mobile-navigation li {
     border-bottom: 1px solid $white;
     padding: 10px 0px;
     font-size: 14px;
@@ -121,6 +117,6 @@ nav.mobile_navigation li {
     }
 }
 
-nav.mobile_navigation ul li a {
+nav.mobile-navigation ul li a {
     color: $white;
 }

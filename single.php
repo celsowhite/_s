@@ -9,11 +9,11 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<header class="page_header">
+			<header class="page-header">
 				<?php the_title(); ?>
 			</header>
 
-			<div class="page_content wysiwyg">
+			<div class="page-content wysiwyg">
 				<?php the_content(); ?>
 			</div>
 			

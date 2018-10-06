@@ -26,28 +26,28 @@
 
 <body <?php body_class(); ?>>
 
-	<header class="main_header">
+	<header class="main-header">
 		<div class="container">
-			<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<a class="main-header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<img src="<?php echo get_template_directory_uri() . '/img/logo/logo.png'; ?>" />
 			</a>
-			<nav class="main_navigation">
+			<nav class="main-navigation">
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container' => '' ) ); ?>
 			</nav>
 		</div>
 	</header>
 
-	<header class="mobile_header">
+	<header class="mobile-header">
 		<div class="container">
-			<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<a class="mobile-header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<img src="<?php echo get_template_directory_uri() . '/img/logo/logo.png'; ?>" />
 			</a>
-			<span class="menu_icon"></span>
+			<span class="menu-icon"></span>
 		</div>
 	</header>
 
-	<nav class="mobile_navigation">
+	<nav class="mobile-navigation">
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => '', 'container' => '' ) ); ?>
 	</nav>
 
-	<div id="content" class="main_content">
+	<div id="content" class="main-content">

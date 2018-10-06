@@ -1,12 +1,23 @@
-import $ from 'jquery';
+/*----------------------------
+Elements
+----------------------------*/
 
-/*================================= 
-MOBILE NAVIGATION REVEAL
-=================================*/
+const mobileNavigation = document.querySelector('nav.mobile-navigation');
 
-var menuIcon = $('.menu_icon');
-var mobileNav = $('nav.mobile_navigation ul');
+const menuIcon = document.querySelector('.mobile-header .menu-icon');
 
-menuIcon.click(function(){
-	mobileNav.toggleClass('open');
+/*----------------------------
+Mobile Navigation
+----------------------------*/
+
+menuIcon.addEventListener('click', function () {
+
+	// Transform the menu icon
+
+	this.classList.toggle('menu-icon--is-crossed');
+
+	// Open the mobile nav drawer
+
+	mobileNavigation.classList.toggle('mobile-navigation--is-open');
+
 });

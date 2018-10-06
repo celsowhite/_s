@@ -1,4 +1,4 @@
-<ul class="social_icons flush_left social_share">
+<ul class="social-icons social-icons--flush-left social_share">
     <li class="fb_share" data-url="<?php the_permalink(); ?>">
         <i class="fab fa-facebook-f"></i>
     </li>
