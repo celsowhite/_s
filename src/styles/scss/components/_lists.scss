@@ -1,0 +1,51 @@
+/*-------------------------------
+Lists
+-------------------------------*/
+
+ul, ol {
+  padding: 0;
+  list-style: none;
+}
+
+/*-------------------------------
+Simple List
+-------------------------------*/
+
+ul.vertical-list {
+  margin: 0 0 20px;
+}
+
+ul.vertical-list li {
+  margin: 0 0 5px;
+}
+
+ul.vertical-list li a:hover {
+  opacity: $opacity-hover;
+}
+
+/*-------------------------------
+List Items
+-------------------------------*/
+
+// Active State
+
+li.is-active {
+  font-family: 'archivo-semi-bold';
+}
+
+/*-------------------------------
+Wysiwyg List
+-------------------------------*/
+
+.wysiwyg {
+  ul, ol {
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: disc;
+    list-style-position: outside;
+  }
+}
+
+.wysiwyg li {
+  margin-left: 1.3em;
+}
