@@ -13,6 +13,12 @@ ul.social-icons li {
     margin: 0px 10px;
 }
 
+// Center
+
+ul.social-icons--center {
+  justify-content: center;
+}
+
 // Flush Left
 
 ul.social-icons--flush-left li:first-child {
