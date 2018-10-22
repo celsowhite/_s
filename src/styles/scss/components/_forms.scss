@@ -29,7 +29,12 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
   outline: none;
 
   &::placeholder {
-	  color: $grey;
+	color: $grey;
+  }
+
+  // Required font size for inputs to not zoom on mobile devices.
+  @include mobile_landscape {
+    font-size: 16px;
   }
 }
 
