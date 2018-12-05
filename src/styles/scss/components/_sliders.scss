@@ -2,6 +2,13 @@
 Flexslider
 -------------------------------*/
 
+.flexslider {
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
 // Direction Nav
 
 .flex-direction-nav a:before {
