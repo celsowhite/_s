@@ -2,7 +2,7 @@
 
   <div class="wysiwyg">
     <ul class="post-list">
-      <li v-for="post in postData" key="post.id">
+      <li v-for="post in postData" v-bind:key="post.id">
         {{ post.title.rendered }}
       </li>
     </ul>
@@ -13,10 +13,7 @@
 <script>
 
   export default {
-    name: 'HelloWorld',
-    props: {
-      msg: String
-    },
+    name: 'Posts',
     data() {
       return {
         postData: [],

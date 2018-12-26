@@ -1,5 +1,6 @@
 module.exports = {
     chainWebpack: config => {
+        config.module.rules.delete('eslint')
         if (config.plugins.has('extract-css')) {
             const extractCSSPlugin = config.plugin('extract-css')
             extractCSSPlugin && extractCSSPlugin.tap(() => [{
@@ -15,7 +16,7 @@ module.exports = {
         }
     },
     devServer: {
-        // Enables us to use the local dev version of the script when doing local dev. Serve the wp site from MAMP server and the vue app from a different port.
+        // Enables us to serve the wp site from MAMP server and the vue app from a different port without getting CORB's warnings.
         disableHostCheck: true
     }
 }
