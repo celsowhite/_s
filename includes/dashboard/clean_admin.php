@@ -46,7 +46,8 @@ add_filter('login_headerurl', 'my_loginURL');
 // Enqueue the login specific stylesheet for design customizations.
 
 function my_logincustomCSSfile() {
-    wp_enqueue_style('login-styles', get_template_directory_uri() . '/dist/login.min.css');
+	$webpack_assets = json_decode(file_get_contents(get_template_directory_uri() . '/dist/webpack-assets.json', true));
+    wp_enqueue_style('login-styles', get_template_directory_uri() . '/dist/' . $webpack_assets->login->css);
 }
 add_action('login_enqueue_scripts', 'my_logincustomCSSfile');
 
