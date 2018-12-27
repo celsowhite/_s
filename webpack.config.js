@@ -94,8 +94,8 @@ module.exports = (env, argv) => {
       entrypoints: devMode ? false : true,
       hash: devMode ? false : true,
       version: devMode ? false : true,
-      timings: devMode ? false : true,
-      assets: devMode ? false : true,
+      timings: true,
+      assets: devMode ? true : true,
       modules: devMode ? false : true,
       warnings: devMode ? false : true,
       publicPath: devMode ? false : true
@@ -103,6 +103,23 @@ module.exports = (env, argv) => {
     // Webpack console performance info.
     performance: {
       hints: false
+    },
+    // Optimization of bundles.
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendor',
+            chunks: 'all'
+          }
+        }
+      }
+    },
+    // Watch options
+    watchOptions: {
+      // Ignore node_modules folder so the watch mode takes up less CPU.
+      ignored: /node_modules/
     }
   }
 };

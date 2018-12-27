@@ -11,6 +11,7 @@ function _s_scripts() {
 
 	$webpack_assets = json_decode(file_get_contents(get_template_directory_uri() . '/dist/webpack-assets.json', true));
 	$main_assets = $webpack_assets->main;
+	$vendor_assets = $webpack_assets->vendor;
 	
 	// Default theme style
 
@@ -25,6 +26,8 @@ function _s_scripts() {
 	wp_enqueue_script('polyfill_io', 'https://cdn.polyfill.io/v2/polyfill.js?features=default,fetch,Array.prototype.find,Array.prototype.findIndex,Array.prototype.includes,Object.entries,Element.prototype.closest', '', '', true);
 
 	// Scripts
+
+	wp_enqueue_script('vendor_script', get_template_directory_uri() . '/dist/' . $vendor_assets->js, '', null, true);
 
 	wp_enqueue_script('main_script', get_template_directory_uri() . '/dist/' . $main_assets->js, '', null, true);
 
