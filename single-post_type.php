@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-	<main class="main_wrapper">
+	<main class="main-wrapper">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 

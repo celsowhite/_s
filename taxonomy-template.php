@@ -5,7 +5,7 @@
 
 get_header(); ?>
 	
-	<main class="main_wrapper">
+	<main class="main-wrapper">
 
 		<header class="page_header">
 			<h1><?php single_term_title(); ?></h1>

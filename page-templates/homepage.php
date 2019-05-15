@@ -5,17 +5,17 @@ Template Name: Homepage
 
 get_header(); ?>
 
-	<main class="main_wrapper">
+	<main class="main-wrapper">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<header class="page_header">
+			<header class="page-header">
 				<div class="container">
 					<h1><?php the_title(); ?></h1>
 				</div>
 			</header>
 
-			<div class="page_content">
+			<div class="page-content">
 				<div class="container">
 					<div class="wysiwyg">
 						<?php the_content(); ?>

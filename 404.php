@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-	<main class="main_wrapper">
+	<main class="main-wrapper">
 	
 		<div class="container">
 			<h1>Page Not Found</h1>

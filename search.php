@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<main id="main post-<?php the_ID(); ?>" class="main_wrapper" role="main">
+	<main id="main post-<?php the_ID(); ?>" class="main-wrapper" role="main">
 
 		<?php if ( have_posts() ) : ?>
 

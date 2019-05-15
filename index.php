@@ -14,15 +14,15 @@
 
 get_header(); ?>
 
-	<main id="main" class="main_wrapper" role="main">
+	<main id="main" class="main-wrapper" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<header class="page_header">
+			<header class="page-header">
 				<?php the_title(); ?>
 			</header>
 
-			<div class="page_content">
+			<div class="page-content">
 				<?php the_content(); ?>
 			</div>
 
