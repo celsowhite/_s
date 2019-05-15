@@ -27,8 +27,6 @@ function _s_scripts() {
 
 	// Styles
 
-	wp_enqueue_style( 'main_styles', 'http://localhost:9000/main.min.css', '', null);
-
 	wp_enqueue_style( 'main_styles', $scripts_root . $webpack_assets->main->css, '', null);
 
 	// Polyfills
