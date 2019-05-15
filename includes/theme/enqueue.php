@@ -10,6 +10,16 @@ function _s_scripts() {
 	// In production these are hashed for cache busting
 
 	$webpack_assets = json_decode(file_get_contents(get_template_directory_uri() . '/dist/webpack-assets.json', true));
+
+	// Set the asset scripts root based on if we are in a dev or prod environment. In dev we are using webpack dev server 
+	// so files are served from localhost.
+
+	if($webpack_assets->metadata->env === 'dev') {
+		$scripts_root = 'http://localhost:9000/';
+	}
+	else {
+		$scripts_root = get_template_directory_uri() . '/dist/';
+	}
 	
 	// Default theme style
 
@@ -17,7 +27,9 @@ function _s_scripts() {
 
 	// Styles
 
-	wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/dist/' . $webpack_assets->main->css, '', null);
+	wp_enqueue_style( 'main_styles', 'http://localhost:9000/main.min.css', '', null);
+
+	wp_enqueue_style( 'main_styles', $scripts_root . $webpack_assets->main->css, '', null);
 
 	// Polyfills
 
@@ -25,9 +37,9 @@ function _s_scripts() {
 
 	// Scripts
 
-	wp_enqueue_script('vendor_script', get_template_directory_uri() . '/dist/' . $webpack_assets->vendor->js, '', null, true);
+	wp_enqueue_script('vendor_script', $scripts_root . $webpack_assets->vendor->js, '', null, true);
 
-	wp_enqueue_script('main_script', get_template_directory_uri() . '/dist/' . $webpack_assets->main->js, '', null, true);
+	wp_enqueue_script('main_script', $scripts_root . $webpack_assets->main->js, '', null, true);
 
 	// Localize main script for accessing Wordpress URLs in JS
 

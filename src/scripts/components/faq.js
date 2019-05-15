@@ -6,16 +6,12 @@ FAQ Expand
 
 const faqs = document.querySelectorAll('.faq');
 
-Array.from(faqs).forEach((faq) => {
+Array.from(faqs).forEach(faq => {
+	// Add a click event listener to each.
 
-    // Add a click event listener to each.
+	faq.addEventListener('click', e => {
+		// Toggle the open state on click.
 
-    faq.addEventListener('click', (e) => {
-
-        // Toggle the open state on click.
-
-        faq.classList.toggle('open');
-
-    });
-
+		faq.classList.toggle('open');
+	});
 });
