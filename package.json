@@ -10,8 +10,8 @@
 	},
 	"private": true,
 	"scripts": {
-		"dev": "webpack --watch --mode=development",
-		"build": "rm -r dist/* && webpack --mode=production --progress"
+		"dev": "NODE_ENV=development webpack --watch --mode=development",
+		"build": "rm -r dist/* && NODE_ENV=production webpack --mode=production --progress"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.0.0",

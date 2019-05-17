@@ -56,7 +56,9 @@ module.exports = (env, argv) => {
 							},
 						},
 						// Process CSS with Post CSS (Autoprefixing, Minifying, etc). Config for this is found in postcss.config.js
-						{ loader: 'postcss-loader' },
+						{
+							loader: 'postcss-loader',
+						},
 						// Compiles Sass to CSS, using Node Sass by default
 						{ loader: 'sass-loader' },
 					],
