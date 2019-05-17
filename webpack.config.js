@@ -3,21 +3,30 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const AssetsPlugin = require('assets-webpack-plugin');
+const glob = require('glob');
 
 module.exports = (env, argv) => {
 	// Set Environment
 
 	const devMode = argv.mode !== 'production';
 
+	// Dynamically load entry files. Each page template has their own entry.
+	// The main entry is loaded on every page.
+
+	const entries = glob
+		.sync('./src/scripts/page-templates/**.js')
+		.reduce(function(obj, el) {
+			obj[path.parse(el).name] = el;
+			return obj;
+		}, {});
+
+	entries.main = './src/scripts/main.js';
+
 	// Webpack Config
 
 	return {
-		// Main contains the full site styles and scripts.
-		// Login contains styles specific for the login page.
-		entry: {
-			main: './src/main.js',
-			login: './src/login.js',
-		},
+		// Entry points. Dynamically created above.
+		entry: entries,
 		// Output built assets to the dist folder. Use a hash during production.
 		output: {
 			filename: devMode ? '[name].min.js' : '[name].[hash].min.js',
