@@ -10,7 +10,7 @@
 	},
 	"private": true,
 	"scripts": {
-		"dev": "webpack-dev-server --mode=development",
+		"dev": "webpack --watch --mode=development",
 		"build": "rm -r dist/* && webpack --mode=production --progress"
 	},
 	"devDependencies": {

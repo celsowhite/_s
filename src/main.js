@@ -9,3 +9,5 @@ import './scripts/components/faq';
 import './scripts/components/social_share';
 import './scripts/components/sliders';
 import './scripts/components/video_players';
+
+console.log('dce');

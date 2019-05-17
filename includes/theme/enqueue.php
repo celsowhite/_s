@@ -11,15 +11,9 @@ function _s_scripts() {
 
 	$webpack_assets = json_decode(file_get_contents(get_template_directory_uri() . '/dist/webpack-assets.json', true));
 
-	// Set the asset scripts root based on if we are in a dev or prod environment. In dev we are using webpack dev server 
-	// so files are served from localhost.
+	// Scripts Root Directory
 
-	if($webpack_assets->metadata->env === 'dev') {
-		$scripts_root = 'http://localhost:9000/';
-	}
-	else {
-		$scripts_root = get_template_directory_uri() . '/dist/';
-	}
+	$scripts_root = get_template_directory_uri() . '/dist/';
 	
 	// Default theme style
 

@@ -84,19 +84,6 @@ module.exports = (env, argv) => {
 				},
 			}),
 		],
-		// Dev Server
-		devServer: {
-			port: 9000,
-			hot: true,
-			headers: {
-				'Access-Control-Allow-Origin': '*',
-				'Access-Control-Allow-Methods':
-					'GET, POST, PUT, DELETE, PATCH, OPTIONS',
-				'Access-Control-Allow-Headers':
-					'X-Requested-With, content-type, Authorization',
-			},
-			disableHostCheck: true,
-		},
 		// Webpack console stats info.
 		stats: {
 			children: false,
