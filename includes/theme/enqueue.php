@@ -15,13 +15,9 @@ function _s_scripts() {
 
 	$scripts_root = get_template_directory_uri() . '/dist/';
 	
-	// Default theme style
-
-	wp_enqueue_style( 'theme_style', get_stylesheet_uri() );
-
 	// Styles
 
-	wp_enqueue_style( 'main_styles', $scripts_root . $webpack_assets->main->css, '', null);
+	wp_enqueue_style( 'main', $scripts_root . $webpack_assets->main->css, '', null);
 
 	// Polyfills
 
@@ -29,7 +25,7 @@ function _s_scripts() {
 
 	// Scripts
 
-	wp_enqueue_script('vendor_script', $scripts_root . $webpack_assets->vendor->js, '', null, true);
+	wp_enqueue_script('vendor', $scripts_root . $webpack_assets->vendor->js, '', null, true);
 
 	$current_page_template_name = str_replace('.php', '', basename(get_page_template()));
 
@@ -42,15 +38,15 @@ function _s_scripts() {
 		// If there is a matching script for this page template and the current page matches this template then load it.
 		if($file_name === $current_page_template_name) {
 			if(isset($webpack_assets->{$file_name}->js)) {
-				wp_enqueue_script($file_name . '_script', $scripts_root . $webpack_assets->{$file_name}->js, '', null, true);
+				wp_enqueue_script($file_name, $scripts_root . $webpack_assets->{$file_name}->js, '', null, true);
 			}
 			if(isset($webpack_assets->{$file_name}->css)) {
-				wp_enqueue_style( $file_name . '_style', $scripts_root . $webpack_assets->{$file_name}->css, '', null);
+				wp_enqueue_style( $file_name, $scripts_root . $webpack_assets->{$file_name}->css, '', null);
 			}
 		}
   }
 	
-	wp_enqueue_script('main_script', $scripts_root . $webpack_assets->main->js, '', null, true);
+	wp_enqueue_script('main', $scripts_root . $webpack_assets->main->js, '', null, true);
 
 	// Localize main script for accessing Wordpress URLs in JS
 
@@ -60,7 +56,7 @@ function _s_scripts() {
 		'ajax_url'      => admin_url('admin-ajax.php')
 	);
 	
-	wp_localize_script('main_script', 'wpUrls', $js_variables);
+	wp_localize_script('main', 'wpUrls', $js_variables);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

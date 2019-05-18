@@ -1,3 +1,3 @@
-import '../../styles/scss/page-templates/custom.scss';
+import '../../styles/page-templates/custom.scss';
 
-console.log('cafe 19');
+console.log('Rogue');
