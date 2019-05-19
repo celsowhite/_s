@@ -38,8 +38,6 @@
 	"dependencies": {
 		"@babel/runtime": "^7.0.0",
 		"fitvids": "^2.0.0",
-		"flexslider": "^2.7.1",
-		"jquery": "^3.3.1",
 		"lodash": "^4.17.10",
 		"plyr": "^3.4.3"
 	},

@@ -32,13 +32,7 @@ get_header(); ?>
 						<?php get_template_part('template-parts/components', 'social_share'); ?>
 					</div>
 					<div class="panel">
-						<div class="flexslider">
-							<ul class="slides">
-								<li><img src="https://celsowhite.com/static/img/websites/rownewyork/featured_image_large.jpg" /></li>
-								<li><img src="https://celsowhite.com/static/img/websites/jimmychin/featured_image_large.jpg" /></li>
-								<li><img src="https://celsowhite.com/static/img/websites/latinousa/featured_image_large.jpg" /></li>
-							</ul>
-						</div>
+						
 					</div>
 					<div class="panel">
 						<?php

@@ -7,5 +7,4 @@ import '../styles/main.scss';
 import './components/header';
 import './components/faq';
 import './components/social_share';
-import './components/sliders';
 import './components/video_players';

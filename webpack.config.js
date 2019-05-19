@@ -81,11 +81,6 @@ module.exports = (env, argv) => {
 				filename: devMode ? '[name].min.css' : '[name].[hash].min.css',
 				chunkFilename: devMode ? '[id].min.css' : '[id].[hash].min.css',
 			}),
-			// Automatically loaded and universally accessible modules.
-			new webpack.ProvidePlugin({
-				$: 'jquery',
-				jQuery: 'jquery',
-			}),
 			// Mac notifications for js or scss errors. In case terminal isn't visible and need to know if something is wrong.
 			new WebpackNotifierPlugin(),
 			new AssetsPlugin({
