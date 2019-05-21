@@ -34,21 +34,25 @@ function _s_scripts() {
 	$page_templates_path = get_template_directory() . '/page-templates';
   $page_template_files = array_diff(scandir($page_templates_path), array('.', '..'));
   foreach($page_template_files as $page_template_file) {
+		// Remove the php extension from the file name.
     $file_name = str_replace('.php', '', $page_template_file);
-		// First check if the template name matches the current page template name. We only load style/script files when we need them.
-		if($file_name === $current_page_template_name) {
-			// Check if there is a matching css file for this template.
-			if(isset($webpack_assets->{$file_name}->css)) {
-				wp_enqueue_style( $file_name, $scripts_root . $webpack_assets->{$file_name}->css, '', null);
-			}
-			// Check if there is a vendors js file for this template.
-			if(isset($webpack_assets->{'vendors~' . $file_name}->js)) {
-				wp_enqueue_script('vendors~' . $file_name, $scripts_root . $webpack_assets->{'vendors~' . $file_name}->js, '', null, true);
-			}
-			// Check if there is a js file for this template.
-			if(isset($webpack_assets->{$file_name}->js)) {
-				wp_enqueue_script($file_name, $scripts_root . $webpack_assets->{$file_name}->js, '', null, true);
-			}
+
+		// If the template name doesn't match the current page template name then don't load it.
+		if($file_name !== $current_page_template_name) return null;
+		
+		// Check if there is a matching css file for this template.
+		if(isset($webpack_assets->{$file_name}->css)) {
+			wp_enqueue_style( $file_name, $scripts_root . $webpack_assets->{$file_name}->css, '', null);
+		}
+
+		// Check if there is a vendors js file for this template.
+		if(isset($webpack_assets->{'vendors~' . $file_name}->js)) {
+			wp_enqueue_script('vendors~' . $file_name, $scripts_root . $webpack_assets->{'vendors~' . $file_name}->js, '', null, true);
+		}
+
+		// Check if there is a js file for this template.
+		if(isset($webpack_assets->{$file_name}->js)) {
+			wp_enqueue_script($file_name, $scripts_root . $webpack_assets->{$file_name}->js, '', null, true);
 		}
   }
 	
