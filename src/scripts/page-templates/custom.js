@@ -1,3 +1,8 @@
 import '../../styles/page-templates/custom.scss';
 
-console.log('Rogue');
+// Scripts
+
+import chunk from 'lodash/chunk';
+
+console.log(chunk(['a', 'b', 'c', 'd'], 2));
+console.log('Dude');

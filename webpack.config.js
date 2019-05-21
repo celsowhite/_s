@@ -115,13 +115,8 @@ module.exports = (env, argv) => {
 		// Optimization of bundles.
 		optimization: {
 			splitChunks: {
-				cacheGroups: {
-					vendor: {
-						test: /[\\/]node_modules[\\/]/,
-						name: 'vendor',
-						chunks: 'all',
-					},
-				},
+				chunks: 'initial',
+				name: true,
 			},
 		},
 		// Watch options
