@@ -37,9 +37,7 @@
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.0.0",
-		"fitvids": "^2.0.0",
-		"lodash": "^4.17.10",
-		"plyr": "^3.4.3"
+		"lodash": "^4.17.10"
 	},
 	"browserslist": [
 		"> 1%",

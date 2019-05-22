@@ -5,6 +5,4 @@ import '../styles/main.scss';
 // Components
 
 import './components/header';
-import './components/faq';
 import './components/social-share';
-import './components/video-players';
