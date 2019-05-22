@@ -39,7 +39,7 @@ function _s_scripts() {
 		wp_enqueue_script('main', $scripts_root . $webpack_assets->main->js, '', null, true);
 	}
 
-	// Page Template Styles/Scripts
+	// Template Styles/Scripts
 
 	$current_template_name = get_current_template_name();
 

@@ -4,29 +4,23 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const AssetsPlugin = require('assets-webpack-plugin');
 const glob = require('glob');
+const WebpackWatchedGlobEntries = require('webpack-watched-glob-entries-plugin');
 
 module.exports = (env, argv) => {
 	// Set Environment
 
 	const devMode = argv.mode !== 'production';
 
-	// Dynamically load entry files. Each page template has their own entry.
-	// The main entry is loaded on every page.
-
-	const entries = glob
-		.sync('./src/scripts/templates/**.js')
-		.reduce(function(obj, el) {
-			obj[path.parse(el).name] = el;
-			return obj;
-		}, {});
-
-	entries.main = './src/scripts/main.js';
-
 	// Webpack Config
 
 	return {
-		// Entry points. Dynamically created above.
-		entry: entries,
+		// Entries
+		entry: WebpackWatchedGlobEntries.getEntries([
+			// Dynamically load entry files. Each template can have their own entry.
+			path.resolve(__dirname, 'src/scripts/templates/**/*.js'),
+			// The main entry is loaded on every page.
+			path.resolve(__dirname, 'src/scripts/main.js'),
+		]),
 		// Output built assets to the dist folder. Use a hash during production.
 		output: {
 			filename: devMode ? '[name].min.js' : '[name].[hash].min.js',
@@ -83,12 +77,15 @@ module.exports = (env, argv) => {
 			}),
 			// Mac notifications for js or scss errors. In case terminal isn't visible and need to know if something is wrong.
 			new WebpackNotifierPlugin(),
+			// Creates json file with the paths of the generated assets.
 			new AssetsPlugin({
 				path: path.resolve(__dirname, 'dist'),
 				metadata: {
 					env: devMode ? 'dev' : 'prod',
 				},
 			}),
+			// Provides a way to glob for entry files in Webpack watch and non-watch modes.
+			new WebpackWatchedGlobEntries(),
 		],
 		// Webpack console stats info.
 		stats: {
