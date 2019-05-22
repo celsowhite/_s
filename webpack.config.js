@@ -14,7 +14,7 @@ module.exports = (env, argv) => {
 	// The main entry is loaded on every page.
 
 	const entries = glob
-		.sync('./src/scripts/page-templates/**.js')
+		.sync('./src/scripts/templates/**.js')
 		.reduce(function(obj, el) {
 			obj[path.parse(el).name] = el;
 			return obj;

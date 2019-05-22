@@ -1,4 +1,4 @@
-import '../../styles/page-templates/custom.scss';
+import '../../styles/templates/custom.scss';
 
 // Scripts
 

@@ -45,7 +45,7 @@ function _s_scripts() {
 
 	// Gather the templates and conditionally enqueue style/script files.
 
-	$script_templates_path = get_template_directory() . '/src/scripts/page-templates';
+	$script_templates_path = get_template_directory() . '/src/scripts/templates';
 	$script_template_files = array_diff(scandir($script_templates_path), array('.', '..'));
 
   foreach($script_template_files as $script_template_file) {
