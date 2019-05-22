@@ -1,7 +1,15 @@
 <?php
 
 /*==========================================
-ENQUEUE SCRIPTS AND STYLES
+Helpers
+==========================================*/
+
+// Get current page template name
+
+require get_template_directory() . '/includes/helpers/get-current-template-name.php';
+
+/*==========================================
+Enqueue Scripts & Styles
 ==========================================*/
 
 function _s_scripts() {
@@ -31,20 +39,21 @@ function _s_scripts() {
 		wp_enqueue_script('main', $scripts_root . $webpack_assets->main->js, '', null, true);
 	}
 
-	// Template Styles/Scripts
+	// Page Template Styles/Scripts
 
-	$current_page_template_name = str_replace('.php', '', basename(get_page_template()));
+	$current_template_name = get_current_template_name();
 
 	// Gather the templates and conditionally enqueue style/script files.
 
-	$page_templates_path = get_template_directory() . '/page-templates';
-  $page_template_files = array_diff(scandir($page_templates_path), array('.', '..'));
-  foreach($page_template_files as $page_template_file) {
-		// Remove the php extension from the file name.
-    $file_name = str_replace('.php', '', $page_template_file);
+	$script_templates_path = get_template_directory() . '/src/scripts/page-templates';
+	$script_template_files = array_diff(scandir($script_templates_path), array('.', '..'));
+
+  foreach($script_template_files as $script_template_file) {
+		// Remove the js extension from the file name.
+    $file_name = str_replace('.js', '', $script_template_file);
 
 		// If the template name doesn't match the current page template name then don't load it.
-		if($file_name !== $current_page_template_name) return null;
+		if($file_name !== $current_template_name) continue;
 		
 		// Check if there is a matching css file for this template.
 		if(isset($webpack_assets->{$file_name}->css)) {
