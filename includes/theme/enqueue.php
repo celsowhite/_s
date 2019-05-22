@@ -21,9 +21,15 @@ function _s_scripts() {
 
 	// Main Styles/Scripts - Universally Loaded
 
-	wp_enqueue_style( 'main', $scripts_root . $webpack_assets->main->css, '', null);
-	wp_enqueue_script('vendors-main', $scripts_root . $webpack_assets->{'vendors~main'}->js, '', null, true);
-	wp_enqueue_script('main', $scripts_root . $webpack_assets->main->js, '', null, true);
+	if(isset($webpack_assets->main->css)) {
+		wp_enqueue_style( 'main', $scripts_root . $webpack_assets->main->css, '', null);
+	}
+	if(isset($webpack_assets->{'vendors~main'}->js)) {
+		wp_enqueue_script('vendors-main', $scripts_root . $webpack_assets->{'vendors~main'}->js, '', null, true);
+	}
+	if(isset($webpack_assets->main->js)) {
+		wp_enqueue_script('main', $scripts_root . $webpack_assets->main->js, '', null, true);
+	}
 
 	// Template Styles/Scripts
 
