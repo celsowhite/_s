@@ -1,0 +1,78 @@
+/*-------------------------------
+General
+-------------------------------*/
+
+.main-wrapper {
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  max-width: 1160px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container--medium {
+  position: relative;
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container--small {
+  position: relative;
+  max-width: 550px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+// Row Container -- Wrapper to lift up row. Ensures items in the last row of a grid fit flush with bottom.
+
+.row-container {
+  margin: 0 auto -20px;
+}
+
+/*-------------------------------
+Panel
+-------------------------------*/
+
+.panel {
+  padding: 40px 0;
+
+  @include tablet {
+    padding: 30px 0;
+  }
+
+  @include mobile {
+    padding: 20px 0;
+  }
+}
+
+// Padding Top
+
+.panel--padding-top {
+  padding: 40px 0 0;
+
+  @include tablet {
+    padding: 30px 0 0;
+  }
+
+  @include mobile {
+    padding: 20px 0 0;
+  }
+}
+
+// Padding Bottom
+
+.panel--padding-bottom {
+  padding: 0 0 40px;
+
+  @include tablet {
+    padding: 0 0 30px;
+  }
+
+  @include mobile {
+    padding: 0 0 20px;
+  }
+}

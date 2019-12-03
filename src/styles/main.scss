@@ -1,24 +1,19 @@
 // Base
 
-@import 'base/_normalize.scss';
-@import 'base/_variables.scss';
-@import 'base/_mixins.scss';
-@import 'base/_fonts.scss';
-@import 'base/font-awesome/fontawesome.scss';
-@import 'base/font-awesome/light.scss';
-@import 'base/font-awesome/regular.scss';
-@import 'base/font-awesome/solid.scss';
-@import 'base/font-awesome/brands.scss';
-@import 'base/_structure.scss';
-@import 'base/_helpers.scss';
+@import "base/_variables.scss";
+@import "base/_mixins.scss";
+@import "base/normalize.scss";
+@import "base/fonts.scss";
+@import "base/layout.scss";
+@import "base/helpers.scss";
 
 // Components
 
-@import 'components/_buttons.scss';
-@import 'components/_icons.scss';
-@import 'components/_header.scss';
-@import 'components/_footer.scss';
-@import 'components/_forms.scss';
-@import 'components/_lists.scss';
+@import "components/buttons.scss";
+@import "components/icons.scss";
+@import "components/header.scss";
+@import "components/footer.scss";
+@import "components/forms.scss";
+@import "components/lists.scss";
 
 // Pages
