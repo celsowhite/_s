@@ -27,13 +27,16 @@ function _s_scripts() {
 
 	wp_enqueue_script('polyfill_io', 'https://cdn.polyfill.io/v2/polyfill.js?features=default,fetch,Array.prototype.find,Array.prototype.findIndex,Array.prototype.includes,Object.entries,Element.prototype.closest', '', '', true);
 
+	// Vendor Scripts - Universally Loaded
+
+	if(isset($webpack_assets->vendor->js)) {
+		wp_enqueue_script( 'vendor', $scripts_root . $webpack_assets->vendor->js, '', null, true);
+	}
+
 	// Main Styles/Scripts - Universally Loaded
 
 	if(isset($webpack_assets->main->css)) {
 		wp_enqueue_style( 'main', $scripts_root . $webpack_assets->main->css, '', null);
-	}
-	if(isset($webpack_assets->{'vendors~main'}->js)) {
-		wp_enqueue_script('vendors-main', $scripts_root . $webpack_assets->{'vendors~main'}->js, '', null, true);
 	}
 	if(isset($webpack_assets->main->js)) {
 		wp_enqueue_script('main', $scripts_root . $webpack_assets->main->js, '', null, true);
@@ -60,27 +63,12 @@ function _s_scripts() {
 			wp_enqueue_style( $file_name, $scripts_root . $webpack_assets->{$file_name}->css, '', null);
 		}
 
-		// Check if there is a vendors js file for this template.
-		if(isset($webpack_assets->{'vendors~' . $file_name}->js)) {
-			wp_enqueue_script('vendors~' . $file_name, $scripts_root . $webpack_assets->{'vendors~' . $file_name}->js, '', null, true);
-		}
-
 		// Check if there is a js file for this template.
 		if(isset($webpack_assets->{$file_name}->js)) {
 			wp_enqueue_script($file_name, $scripts_root . $webpack_assets->{$file_name}->js, '', null, true);
 		}
   }
 	
-	// Localize main script for accessing Wordpress URLs in JS
-
-	$js_variables = array(
-		'site'          => get_option('siteurl'),
-		'theme'         => get_template_directory_uri(),
-		'ajax_url'      => admin_url('admin-ajax.php')
-	);
-	
-	wp_localize_script('main', 'wpUrls', $js_variables);
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
