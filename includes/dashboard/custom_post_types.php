@@ -37,6 +37,7 @@ function custom_post_type_lectures() {
 		'show_in_menu'        => true,
 		'show_in_nav_menus'   => true,
 		'show_in_admin_bar'   => true,
+		'show_in_rest'        => true,
 		'menu_position'       => 5,
 		'can_export'          => true,
 		'has_archive'         => true,
