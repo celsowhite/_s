@@ -27,8 +27,11 @@ function _s_scripts() {
 
 	wp_enqueue_script('polyfill_io', 'https://cdn.polyfill.io/v2/polyfill.js?features=default,fetch,Array.prototype.find,Array.prototype.findIndex,Array.prototype.includes,Object.entries,Element.prototype.closest', '', '', true);
 
-	// Vendor Scripts - Universally Loaded
+	// Vendor Styles/Scripts - Universally Loaded
 
+	if(isset($webpack_assets->vendor->css)) {
+		wp_enqueue_style( 'vendor', $scripts_root . $webpack_assets->vendor->css, '', null);
+	}
 	if(isset($webpack_assets->vendor->js)) {
 		wp_enqueue_script( 'vendor', $scripts_root . $webpack_assets->vendor->js, '', null, true);
 	}
