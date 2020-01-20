@@ -28,6 +28,10 @@ require get_template_directory() . '/includes/dashboard/register_widgets_sidebar
 
 require get_template_directory() . '/includes/dashboard/clean_admin.php';
 
+// Media Library
+
+require get_template_directory() . '/includes/dashboard/media_library.php';
+
 /*==========================================
 HELPERS
 ==========================================*/

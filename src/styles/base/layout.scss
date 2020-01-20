@@ -2,9 +2,31 @@
 General
 -------------------------------*/
 
-.main-wrapper {
-  overflow-x: hidden;
+html {
+  height: 100%;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  width: 100%;
+  background-color: $white;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*-------------------------------
+Main
+-------------------------------*/
+
+/*-------------------------------
+Container
+-------------------------------*/
 
 .container {
   position: relative;
