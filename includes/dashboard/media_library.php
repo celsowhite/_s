@@ -4,7 +4,7 @@
 Limit Image Upload Dimensions / Width
 =================================*/
 
-function ull_validate_image_size( $file ) {
+function validate_image_size( $file ) {
 	$image = getimagesize($file['tmp_name']);
 	$maximum = array(
 		'width' => '2500',
@@ -23,6 +23,6 @@ function ull_validate_image_size( $file ) {
 	}
 }
 
-add_filter('wp_handle_upload_prefilter','ull_validate_image_size');
+add_filter('wp_handle_upload_prefilter','validate_image_size');
 
 ?>
