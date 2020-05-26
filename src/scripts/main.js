@@ -6,3 +6,8 @@ import '../styles/main.scss';
 
 import './components/header';
 import './components/social-share';
+
+document.addEventListener('DOMContentLoaded', () => {
+  // CSS Vars
+  cssVars({});
+});
