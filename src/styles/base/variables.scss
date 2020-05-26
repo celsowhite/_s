@@ -1,0 +1,35 @@
+:root {
+  /* Colors */
+  --color-white: #ffffff;
+  --color-white-rgb: 255, 255, 255;
+  --color-black: #000000;
+  --color-black-rgb: 0, 0, 0;
+
+  /* Transitions */
+  --transition-duration-fast: 300ms;
+  --transition-duration-slow: 1000ms;
+  --transition-easing-standard: ease-in-out;
+  --transition-easing-cubic: cubic-bezier(0.75, 0, 0.125, 1);
+
+  /* Layout */
+  --grid-item-padding: 20px;
+  --section-vertical-padding: 40px;
+
+  /* Height */
+  --height-header: 60px;
+
+  /* Z-Index */
+  --z-index-modal: 40;
+  --z-index-overlay: 30;
+  --z-index-navigation: 20;
+  --z-index-below-navigation: 19;
+  --z-index-priority-content-high: 15;
+  --z-index-priority-content: 10;
+  --z-index-hidden: -10;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --height-header: 50px;
+  }
+}

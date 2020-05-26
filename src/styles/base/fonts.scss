@@ -6,7 +6,7 @@ body {
   font-size: calc(12px + (15 - 12) * ((100vw - 768px) / (1600 - 768)));
   line-height: 1.73;
   font-family: 'helvetica';
-  color: $black;
+  color: var(--color-black);
 
   @media all and (max-width: 768px) {
     font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (768 - 320)));
@@ -121,7 +121,7 @@ a:focus {
   transition: color 0.3s ease-in-out;
 
   &:hover {
-    color: $black;
+    color: var(--color-black);
   }
 }
 

@@ -2,8 +2,9 @@
 Button Input
 ==================================*/
 
-button, input[type="submit"] {
-    -webkit-appearance: none;
+button,
+input[type='submit'] {
+  -webkit-appearance: none;
 }
 
 /*==================================
@@ -11,54 +12,54 @@ Buttons
 ==================================*/
 
 .btn {
-    position: relative;
-    padding: 20px;
+  position: relative;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 23px;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+
+  @include mobile_landscape {
     font-size: 18px;
     line-height: 23px;
-    display: inline-block;
-    text-align: center;
-    transition: all .3s ease-in-out;
-
-    @include mobile_landscape {
-        font-size: 18px;
-        line-height: 23px;
-    }
+  }
 }
 
 // Primary
 
 .btn--primary {
-    background: $black;
-    color: $white;
-    border: 0;
+  background: var(--color-black);
+  color: var(--color-white);
+  border: 0;
 
-    &:hover {
-        background: $grey;
-    }
+  &:hover {
+    background: var(--color-black);
+  }
 }
 
 // Secondary
 
 .btn--secondary {
-    background: $grey;
-    color: $black;
+  background: var(--color-black);
+  color: var(--color-black);
 
-    &:hover {
-        background: $black;
-        color: $grey;
-    }
+  &:hover {
+    background: var(--color-black);
+    color: var(--color-black);
+  }
 }
 
 // Disabled {
 
 .btn--disabled {
-    background: $grey;
-    color: $white;
+  background: var(--color-black);
+  color: var(--color-white);
 }
 
 // Full Width
 
 .btn--full-width {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }

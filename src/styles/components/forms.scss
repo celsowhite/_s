@@ -3,25 +3,31 @@ Structure
 -------------------------------*/
 
 .form_container {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .form__group {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 /*-------------------------------
 Inputs
 -------------------------------*/
 
-input, button, textarea {
+input,
+button,
+textarea {
   border-radius: 0;
 }
 
-input[type="text"], input[type="email"], input[type="password"], textarea, select {
-  background: $white;
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea,
+select {
+  background: var(--color-white);
   border: 0;
-  border-bottom: 1px solid $black;
+  border-bottom: 1px solid var(--color-black);
   display: block;
   border-radius: 0;
   padding: 0 0 10px;
@@ -29,7 +35,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
   outline: none;
 
   &::placeholder {
-	color: $grey;
+    color: var(--color-black);
   }
 
   // Required font size for inputs to not zoom on mobile devices.
@@ -45,7 +51,7 @@ Helpers
 // Hide
 
 .form__input--is-hidden {
-    display: none;
+  display: none;
 }
 
 /*-------------------------------
@@ -54,25 +60,25 @@ Uses custom font awesome down arrow as a psuedo element.
 -------------------------------*/
 
 .form__select {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .form__select::after {
-    content: "\f107";
-    font-family: 'Font Awesome 5 Pro';
-    pointer-events: none;
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    margin-top: -10px;
-    font-size: 16px;
-    line-height: 16px;
+  content: '\f107';
+  font-family: 'Font Awesome 5 Pro';
+  pointer-events: none;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -10px;
+  font-size: 16px;
+  line-height: 16px;
 }
 
 .form__select select {
-    appearance: none;
-    cursor: pointer;
+  appearance: none;
+  cursor: pointer;
 }
 
 /*-------------------------------
@@ -82,16 +88,16 @@ Radios
 // Structure
 
 .form__radio-group {
-    display: flex;
-    flex-flow: row wrap;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 // Individual Radio
 
 .form__radio {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 
 .form__radio-input {
-    margin-right: 5px;
+  margin-right: 5px;
 }
