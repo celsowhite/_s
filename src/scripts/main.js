@@ -7,6 +7,10 @@ import '../styles/main.scss';
 import './components/header';
 import './components/social-share';
 
+// Helpers
+
+import cssVars from 'css-vars-ponyfill';
+
 document.addEventListener('DOMContentLoaded', () => {
   // CSS Vars
   cssVars({});
