@@ -15,19 +15,19 @@ function _s_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	/*==========================================
-	LET WORDPRESS MANAGE THE DOCUMENT TITLE
+	Let Wordpress Manage The Document Title
 	==========================================*/
 
 	add_theme_support( 'title-tag' );
 
 	/*==========================================
-	ENABLE SUPPORT FOR POST THUMBNAILS ON POSTS AND PAGES
+	Enable support for post thumbnails on posts and pages.
 	==========================================*/
 
 	add_theme_support( 'post-thumbnails' );
 
 	/*==========================================
-	SETUP NAVIGATION MENUS
+	Setup Navigation Menus
 	==========================================*/
 
 	register_nav_menus( array(
@@ -48,7 +48,7 @@ function _s_setup() {
 	) );
 
 	/*==========================================
-	ENABLE SUPPORT FOR POST FORMATS
+	Enable support for post formats
 	==========================================*/
 
 	add_theme_support( 'post-formats', array(
@@ -58,6 +58,12 @@ function _s_setup() {
 		'quote',
 		'link',
 	) );
+
+	/*==========================================
+	Enable support for Gutenberg block features
+	==========================================*/
+
+	add_theme_support('responsive-embeds');
 
 }
 
