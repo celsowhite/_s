@@ -26,7 +26,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', <?php the_field('google_analytics_id', 'option'); ?>);
+  gtag('config', '<?php the_field('google_analytics_id', 'option'); ?>');
 </script>
 
 </body>
